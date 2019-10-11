@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+  <title>Bing Crosby</title>
+  <meta charset="utf-8"/>
+  <style>
+    .i1 {grid-area: header;}
+    .i2 {grid-area: menu;}
+    .i3 {grid-area: main;}
+    .i4 {grid-area: left;}
+    .i5 {grid-area: middle;}
+    .i6 {grid-area: middle;}
+    .p1 {grid-area: left;}
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'i1 i1 i6'
+        'i2 i5 i6'
+        'i3 i5 i6'
+        'i3 i5 i6'
+
+      grid-gap: 20px;
+      background-color: white;
+      padding: 10px;
+      border: 50px;
+    }
+
+    #i1 {
+      width:150px;
+      font-size: 100px;
+      text-align: left;
+      font-family:Bahnschrift SemiBold;
+    }
+     .i2 {
+      width:350px;
+      font-size: 15px;
+      text-align: left;
+      font-family: Times New Roman;
+     }
+    #i4 {
+      width:150px;
+      font-size: 12px;
+      text-align: left;
+      font-family: Agency FB;
+    }
+    #p1::first-letter {
+      font-size: 300%;
+    }
+    #p1 {
+      width: 250px;
+      font-size: 10px;
+      text-align: left;
+      font-family: serif;
+      padding: 10px;
+    }
+    #i3 {
+      width: 250px;
+      font-size: 10px;
+      text-align: left;
+      font-family: serif;
+      padding: 10px;
+    }
+    .i5 {
+      width: 250px;
+      font-size: 10px;
+      text-align: left;
+      font-family: serif;
+      padding: 10px;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="grid-container" >
+      <div id="i1">Bing Crosby</div>
+    <div class="i2"> With a new album released and his first SNL appearance just days away, the Washington native talks about music, fame, and golf.</div>
+      <br/>
+      <div id="i4"> by Amy Moeller</div>
+      <div id="p1"> Ihiclass imilluptae nissitiofifcilla dollabo rporestobis ve-lieutr, totam cssctcm ctur aur labores equiar vel ipiot ut estrantotam con esrem ulparci mperor susape ritreu  eossita-tur an verum as solupturi cullam fufiarue auteccac veiscim arum con corruntur as am ellecapro beaqui tempere ne re-seque volupta quis nostipr emolut dolore calesti aur la plabo. Gia es uraspelit que ipicipistio. Nam luarupturio fenficiiste pore vilorestibu smagnihila ipas con conempe licano. Ostibus-ant is easte la nonern quis a cru si rerum fuga. Iquatiaecterm ulloristatct podiatis andesquam ulpa prest occiptatur?</div>
+      <div id= "i3"> Os aspid ut aut slisquam que nonseir squodistes fi dolupte tionse non etusacet adic te quac et voloreiunt quo mos mafnarne ionseque? Ligoat. Cipicit labora nimi, sumt orem dendant ionsequie moni od mos alir, wuie seman quw swa nita soloearwm is mafnisendame con eaquantium hiciis volor rempor natir sam sed quarquiae re velent, ipsam, acepel maion pes rehenduciarm sec quaecti eon nestisi tatur?Isia doloriv usanriass, nat wuaeper spedit volipras ipsun.</div>
+      <div class="i5">Areunse sys upsam est offlciis iur, sandios apicil et maxima do-lipras ca nese dollori cores deodeliaqil ad es saectas perchieab ipsunt. Fie to mi, ipis dolescqui ur acesru ut earunt.</div>
