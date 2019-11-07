@@ -1,5 +1,6 @@
-﻿<!doctype html>
-
+ 
+<!doctype html>
+ 
 <html lang="en">
 <head>
     <meta charset="utf-8"> 
@@ -13,13 +14,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+ 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js"></script>
     <style>
     .card{
-
+ 
         width: 300px;
         height: 500px;
         text-align: center;
@@ -29,7 +30,7 @@
         align-self: center;
         margin: 0 auto; /* Added */
         float: none; /* Added */
-        margin-bottom: 175px; 
+        margin-bottom: 375px; 
     }
     .btn-primary{
         position: absolute;
@@ -40,7 +41,7 @@
         display: block;
         padding-left: 35px;
         padding-right: 35px;
-
+ 
     }
     .btn-outline-primary{
         position: absolute;
@@ -53,24 +54,48 @@
         padding-left: 30px;
         padding-right: 30px;
     }
-    .about-us{
+    .about-us, .features , p.about-us, contact-us{
+            color: gray;
             text-align: center;
-            margin: 15%;
+            margin: 4%;
+            margin-bottom: 60px;
+            border: 1px solid white;
+            border-radius: 5%;
+            padding: 15px;
+            padding-left: 0;
+            padding-right: 0;
+            background-color: white ;
             
         }
 
+    .landing-image{
+        height: 35%;
+        width: 100%;
+        border-radius: 2%;
+        
+        
+    }
+    .heading{
+        font-size: 22pt;
+        color:gray
+    }
+    .subtitle{
+        font-size: 18pt;
+        color: gray;
+    }
+ 
     </style>
 </head>
-
-<body background="images/filler.jpg">
+ 
+<body background="images/aquafur.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#!">Calendagenda</a>
-
+        <a class="navbar-brand" href="#!"></a>
+ 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item active">
@@ -98,11 +123,14 @@
                   <button type="button" class="btn btn-outline-primary">Signup</button>
                 </div>
               </div>
-
+ 
               <section class="about">
+                    <div class="image-div">
+                        <img class="landing-image" src="images/office.jpg"/>
+                    </div>
                     <div class="about-us">
-                        <p>About the App</p>
-                        <h1>Calendar app is designed to help people allow people to keep track
+                        <p class="heading">About</p>
+                        <p class="subtitle">Calendar app is designed to help people allow people to keep track
                              with their schedules and be updated on their daily tasks.<br><br></h1>
                         <p>We are first-year CST students driven to help others be organized. 
                             We have considered many factors of a student's daily life to incorporate 
@@ -112,8 +140,36 @@
                     </div>
                     
             </section>
-              
+ 
+            <section class="features-sect">
+                    <div class="image-div">
+                            <img class="landing-image" src="images/calen.jpg"/>
+                        </div>
+                <div class="features">
+                <p class="heading"> Core Features</h1>
+                  <p >Our mission is to help you with time management.</h4>
+                  <p>You can upload your course information and access it anytime.</h4>
+                  <p>Set up notifications with us and we will let you know when there is a due coming up.</h4>
+                  <br>
+                  <br>
+                  </div>
+              </section>
+
+              <section class="contact-sect">
+                    <div class="image-div">
+                            
+                        </div>
+                <div class="contact">
+                <p class="heading"></p> Contact us!</h1>
+                <img  src="images/social-media.png" style="width:50; height:30px">
+                  <br>
+                  </div>
+              </section>
   
 </body>
 </html>
+ 
+ 
+ 
+ 
 
