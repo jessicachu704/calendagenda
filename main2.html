@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"> 
-    <title>Calendagenda :: Main Page</title>
+    <title>Home | Calendagenda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
     <!-- Bootstrap for Mobile-first -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,16 +14,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js"></script>
     <link rel="stylesheet" href="main2.css">
     <style>
 
-    .about-us{
-            text-align: center;
-            margin: 15%;
-            
-        }
 
     </style>
 </head>
@@ -62,20 +57,48 @@
               <section class="about">
                     <div class="about-us">
                         
-                        <p>Welcome, user.</p>
-                        <h1>Today schedule list: <br><br></h1>
-                        
+                        <div class="calendar_header">
+                            <h1 class = "header_title">Welcome back!</h1>
+                          
+                          <div class="calendar_plan">
+                            <div class="cl_plan">
+                              <div class="cl_title">Today</div>
+                              <div class="cl_copy">25 November  2019</div>
+                              <div class="cl_add">
+                                <i class="fas fa-plus"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="events-container">
+                            <span class="events__title">This weeks schedule:</span>
+                            <ul class="events__list">
+                              <li class="events__item">
+                                <div class="events__item--left">
+                                  <span class="events__name">Java Assignment 1</span>
+                                  <span class="events__percent">5%</span>
+                                  <span class="events__date">Oct 5</span>
+                                </div>
+                                <span class="events__tag1">12 PM</span>
+                                <span class="events__tag2">COMP 1510 </span>
 
 
+                              </li>
+                              <li class="events__item">
+                                <div class="events__item--left">
+                                  <span class="events__name">Java Quiz</span>
+                                  <span class="events__percent">5%</span>
+                                  <span class="events__date">Oct 7</span>
+                                </div>
+                                <span class="events__tag1">10  pm</span>
+                                <span class="events__tag2">COMP 1510 </span>
 
 
-                        All done, check here: 
-                        <p>
-                            
-                            
-                            <br><br>
+                              </li>
                     
-                        </p>
+                            </ul>
+                          </div>
+
                     </div>
                     
             </section>
