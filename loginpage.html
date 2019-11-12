@@ -47,31 +47,48 @@
 
 
 <style>
-h1{ color:white;
-    background-color: teal;
+.bg-img {
+   background-image: url(https://img.freepik.com/free-vector/urban-buildings-with-cityscape-scenery_18591-51831.jpg?size=626&ext=jpg) ;
+   /* background-size: 100vw 100vh; */
+  opacity: 0.5;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-}</style>
+      }
+</style>
 </head>
 
 <body>
-    <h1> Calendagenda</h1>
-    <!-- A grey horizontal navbar that becomes vertical on small screens -->
-<nav class="navbar navbar-expand-sm bg-light">
 
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-  
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#!"><img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="50" height="50"/></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Contact Us</a>
+              </li>
+          </ul>
+      </div>
   </nav>
+  <div class="bg-img">
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
 
@@ -114,6 +131,8 @@ h1{ color:white;
         // The start method will wait until the DOM is loaded.
 ui.start('#firebaseui-auth-container', uiConfig);
     </script>
+  </div>
+
 </body>
 
 </html>
