@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>FIREBASE EXAMPLES</title>
     <meta name="comp1930 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -37,15 +37,15 @@
     <h1>Welcome to Jessica's Amazing App</h1>
 
     <h2>Let's read from the datebase: <span id="stuff">stuff</span></h2>
-    <p id="grade" >60</p>;
-    <p id="course" >1510</p>;
+    <p id="grade" >75</p>
+    <p id="course" >1510</p>
 
     <script>
         //Retrieve info from database and place onto HTML
-        db.collection("quotes").doc("789").onSnapshot(function (snap) {
+        db.collection("courses").doc("1510").onSnapshot(function (snap) {
             console.log("Current data is...", snap.data());
-            document.getElementById('stuff').innerHTML = snap.data().message;
-            // another way is snap.data()["message"]
+            document.getElementById('stuff').innerHTML = snap.data().description +" "+  snap.data().room;
+          
 
         });
 
@@ -55,7 +55,7 @@
         console.log("GRADE " + gradeOfQuiz1);
         console.log("Coursenum " + courseNumber);    
 
-        var grade = db.collection("gradebook");
+        var grade = db.collection("users").doc("testUser1").collection("gradebook");
         grade.doc(courseNumber).set({
             name: "quiz",
             grade: [gradeOfQuiz1]

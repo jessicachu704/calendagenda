@@ -1,7 +1,7 @@
 
 // Fucntion that creates a new document in the users collection
 function createUser() {
-    console.log("CREATED");
+ 
 
     // if the current user logged in user
     // is authenticated, then grab "uid" "displayName" and "email"

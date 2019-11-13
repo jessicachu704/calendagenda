@@ -27,7 +27,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
+    
     <script src="scripts/firebase_config.js"></script>
 
 
@@ -71,8 +71,9 @@ body {
   </nav>
   <div class="bg-img">
     <div id="firebaseui-auth-container"></div>
-
     <script src="scripts/create_user.js"></script>
+    <script>createUser();</script>
+   
 
     <div id="loader">Loading...</div>
 
@@ -99,7 +100,7 @@ body {
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'main2.html',
+            signInSuccessUrl: 'main.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
               //  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
