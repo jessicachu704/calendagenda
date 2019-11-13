@@ -51,7 +51,7 @@
     <h1>Welcome to Jessica's Amazing App</h1>
 
     <h2>Let's read from the datebase: <span id="stuff">stuff</span></h2>
-
+    <p id="grade" >66</p>;
     <script>
         db.collection("quotes").doc("789").onSnapshot(function (snap) {
             console.log("Current data is...", snap.data());
@@ -67,6 +67,15 @@
 
         });
 
+        var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
+        console.log("GRADE " + gradeOfQuiz1);
+
+        var grade = db.collection("courses");
+        grade.doc("1510").set({
+            name: "quiz",
+ 
+            grade: [gradeOfQuiz1]
+        });
 
         var citiesRef = db.collection("cities");
 
@@ -86,30 +95,7 @@
             population: 3900000,
             regions: ["west_coast", "socal"]
         });
-        citiesRef.doc("DC").set({
-            name: "Washington, D.C.",
-            state: null,
-            country: "USA",
-            capital: true,
-            population: 680000,
-            regions: ["east_coast"]
-        });
-        citiesRef.doc("TOK").set({
-            name: "Tokyo",
-            state: null,
-            country: "Japan",
-            capital: true,
-            population: 9000000,
-            regions: ["kanto", "honshu"]
-        });
-        citiesRef.doc("BJ").set({
-            name: "Beijing",
-            state: null,
-            country: "China",
-            capital: true,
-            population: 21500000,
-            regions: ["jingjinji", "hebei"]
-        });
+
     </script>
 
 </body>
