@@ -32,21 +32,17 @@
 
 
 <style>
-.bg-img {
-   background-image: url(https://img.freepik.com/free-vector/urban-buildings-with-cityscape-scenery_18591-51831.jpg?size=626&ext=jpg) ;
-   /* background-size: 100vw 100vh; */
-  opacity: 0.5;
+body {
+    background-size: 100vw 100vh; 
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
       }
 </style>
 </head>
 
-<body>
-
+<body background = "C:\Users\jessi\Desktop\oct11\projectX\images\photo.jpeg" >
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -75,8 +71,11 @@
   </nav>
   <div class="bg-img">
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
+
     <script src="scripts/create_user.js"></script>
+
+    <div id="loader">Loading...</div>
+
 
     <script>
         // Initialize the FirebaseUI Widget using Firebase.
@@ -119,8 +118,6 @@
     
 
     </script>
-     
-  </div>
 
 </body>
 
