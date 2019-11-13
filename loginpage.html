@@ -28,22 +28,7 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
 
-    <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-              apiKey: "AIzaSyBdBEBEjdmlhXjKEDS34-BIP1KtBqjALgE",
-              authDomain: "calenderapp-2aa01.firebaseapp.com",
-              databaseURL: "https://calenderapp-2aa01.firebaseio.com",
-              projectId: "calenderapp-2aa01",
-              storageBucket: "calenderapp-2aa01.appspot.com",
-              messagingSenderId: "355287228060",
-              appId: "1:355287228060:web:69345e00594b1e532e9759",
-              measurementId: "G-54M7H0KZ73"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-    </script>
+    <script src="scripts/firebase_config.js"></script>
 
 
 <style>
@@ -91,6 +76,7 @@
   <div class="bg-img">
     <div id="firebaseui-auth-container"></div>
     <div id="loader">Loading...</div>
+    <script src="scripts/create_user.js"></script>
 
     <script>
         // Initialize the FirebaseUI Widget using Firebase.
@@ -102,9 +88,11 @@
                     // User successfully signed in.
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
+
                     return true;
                 },
                 uiShown: function () {
+                    
                     // The widget is rendered.
                     // Hide the loader.
                     document.getElementById('loader').style.display = 'none';
@@ -112,12 +100,10 @@
             },
             // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
             signInFlow: 'popup',
-            signInSuccessUrl: 'main.html',
+            signInSuccessUrl: 'main2.html',
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
               //  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-             //   firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-              //  firebase.auth.TwitterAuthProvider.PROVIDER_ID,
               //  firebase.auth.GithubAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
               //  firebase.auth.PhoneAuthProvider.PROVIDER_ID
@@ -129,8 +115,11 @@
         };
 
         // The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
+    ui.start('#firebaseui-auth-container', uiConfig);
+    
+
     </script>
+     
   </div>
 
 </body>
