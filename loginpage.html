@@ -27,53 +27,56 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-    <script>
-            // Your web app's Firebase configuration
-            var firebaseConfig = {
-              apiKey: "AIzaSyBdBEBEjdmlhXjKEDS34-BIP1KtBqjALgE",
-              authDomain: "calenderapp-2aa01.firebaseapp.com",
-              databaseURL: "https://calenderapp-2aa01.firebaseio.com",
-              projectId: "calenderapp-2aa01",
-              storageBucket: "calenderapp-2aa01.appspot.com",
-              messagingSenderId: "355287228060",
-              appId: "1:355287228060:web:69345e00594b1e532e9759",
-              measurementId: "G-54M7H0KZ73"
-            };
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-            firebase.analytics();
-    </script>
+    
+    <script src="scripts/firebase_config.js"></script>
 
 
 <style>
-h1{ color:white;
-    background-color: teal;
-
-}</style>
+body {
+    background-size: 100vw 100vh; 
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+      }
+</style>
 </head>
 
-<body>
-    <h1> Calendagenda</h1>
+<body background = "C:\Users\jessi\Desktop\oct11\projectX\images\photo.jpeg" >
     <!-- A grey horizontal navbar that becomes vertical on small screens -->
-<nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-  
+      <a class="navbar-brand" href="#!"><img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="50" height="50"/></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#!">Contact Us</a>
+              </li>
+          </ul>
+      </div>
   </nav>
+  <div class="bg-img">
     <div id="firebaseui-auth-container"></div>
+    <script src="scripts/create_user.js"></script>
+    <script>createUser();</script>
+   
+
     <div id="loader">Loading...</div>
+
 
     <script>
         // Initialize the FirebaseUI Widget using Firebase.
@@ -85,9 +88,11 @@ h1{ color:white;
                     // User successfully signed in.
                     // Return type determines whether we continue the redirect automatically
                     // or whether we leave that to developer to handle.
+
                     return true;
                 },
                 uiShown: function () {
+                    
                     // The widget is rendered.
                     // Hide the loader.
                     document.getElementById('loader').style.display = 'none';
@@ -99,8 +104,6 @@ h1{ color:white;
             signInOptions: [
                 // Leave the lines as is for the providers you want to offer your users.
               //  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-             //   firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-              //  firebase.auth.TwitterAuthProvider.PROVIDER_ID,
               //  firebase.auth.GithubAuthProvider.PROVIDER_ID,
                 firebase.auth.EmailAuthProvider.PROVIDER_ID,
               //  firebase.auth.PhoneAuthProvider.PROVIDER_ID
@@ -112,8 +115,11 @@ h1{ color:white;
         };
 
         // The start method will wait until the DOM is loaded.
-ui.start('#firebaseui-auth-container', uiConfig);
+    ui.start('#firebaseui-auth-container', uiConfig);
+    
+
     </script>
+
 </body>
 
 </html>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>FIREBASE EXAMPLES</title>
     <meta name="comp1930 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -29,39 +29,39 @@
     <!------------------------------------------------------------------------------>
     <!-- Optional styles and scripts of your own                                  -->
     <!------------------------------------------------------------------------------>
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js"></script>
-    
+    <script src="scripts/firebase_config.js"></script>
+
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#!">Calendagenda</a>
+    <h1>Welcome to Firebase Example</h1>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
+    <p id="grade" >77</p>
+    <p id="course" >1510</p>
+
+    <script>
+        //Retrieve course info from database and place onto HTML
+        db.collection("courses").doc("1510").onSnapshot(function (snap) {
+            console.log("Current data is...", snap.data());
+            document.getElementById('stuff').innerHTML = snap.data().description +" "+  snap.data().room;
+          
+
+        });
+
+        var courseNumber = document.getElementById("course").innerHTML;
+        var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
+        console.log("GRADE " + gradeOfQuiz1);
+        console.log("Coursenum " + courseNumber);    
+
+        var grade = db.collection("users").doc("testUser4").collection("gradebook");
+        console.log("GRADE:" + grade)
+        grade.doc(courseNumber).set({
+            name: "assignment",
+            grade: [gradeOfQuiz1]});
 
 
+    </script>
 </body>
 
 </html>
