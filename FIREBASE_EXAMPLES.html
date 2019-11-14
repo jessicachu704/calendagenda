@@ -34,14 +34,14 @@
 </head>
 
 <body>
-    <h1>Welcome to Jessica's Amazing App</h1>
+    <h1>Welcome to Firebase Example</h1>
 
-    <h2>Let's read from the datebase: <span id="stuff">stuff</span></h2>
-    <p id="grade" >75</p>
+    <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
+    <p id="grade" >77</p>
     <p id="course" >1510</p>
 
     <script>
-        //Retrieve info from database and place onto HTML
+        //Retrieve course info from database and place onto HTML
         db.collection("courses").doc("1510").onSnapshot(function (snap) {
             console.log("Current data is...", snap.data());
             document.getElementById('stuff').innerHTML = snap.data().description +" "+  snap.data().room;
@@ -49,18 +49,18 @@
 
         });
 
-        //Course and grade inputs are taken in and stored into the database
         var courseNumber = document.getElementById("course").innerHTML;
         var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
         console.log("GRADE " + gradeOfQuiz1);
         console.log("Coursenum " + courseNumber);    
 
-        var grade = db.collection("users").doc("testUser1").collection("gradebook");
+        var grade = db.collection("users").doc("testUser4").collection("gradebook");
+        console.log("GRADE:" + grade)
         grade.doc(courseNumber).set({
-            name: "quiz",
-            grade: [gradeOfQuiz1]
+            name: "assignment",
+            grade: [gradeOfQuiz1]});
 
-        });
+
     </script>
 </body>
 
