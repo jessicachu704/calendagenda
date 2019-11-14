@@ -59,14 +59,15 @@
             // another way is snap.data()["message"]
 
         });
-
-        db.collection("users").doc("courses").collection("1510").doc("quiz").onSnapshot(function (snap) {
+        
+        /*db.collection("users").doc("courses").collection("1510").doc("quiz").onSnapshot(function (snap) {
             console.log("Current data is...", snap.data());
             document.getElementById('stuff').innerHTML = snap.data().message;
             // another way is snap.data()["message"]
 
         });
-
+        */
+       
         var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
         console.log("GRADE " + gradeOfQuiz1);
 

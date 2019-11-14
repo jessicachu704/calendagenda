@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calendagenda :: Grades</title>
+
+    <!-- Bootstrap for Mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+    <style>
+        body {
+            background-image: url(images/courseinfo.jpg);
+        }
+
+        .content {
+            text-align: center;
+            margin: 5vh;
+
+        }
+
+        .card {
+            margin: 1.5vh;
+            height: 500px;
+            width: 95%;
+            margin-top: 50px;
+
+        }
+
+        .card-deck {
+            display: block;
+
+
+        }
+
+
+        .btn-outline-secondary {
+            width: 100%;
+            margin: 1.5vh;
+
+        }
+
+        .selection {
+            border: 1px solid gray;
+            padding: 1.5vh;
+            padding-right: 30px;
+            border-radius: 3%
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#!">Calendagenda</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Office Hours</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Course Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#!">Help</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="content">
+
+        <p>Pick the Course</p>
+        <h1>Course Information <br><br></h1>
+
+        <div class="selection">
+            <a href="#comp-1510" class="btn btn-outline-secondary">COMP 1510</a>
+            <a href="#comp-1712" class="btn btn-outline-secondary">COMP 1712</a>
+            <a href="#comp-1536" class="btn btn-outline-secondary">COMP 1536</a>
+            <a href="#comp-1930" class="btn btn-outline-secondary">COMP 1930</a>
+            <a href="#comp-1100" class="btn btn-outline-secondary">COMP 1100</a>
+            <a href="#comp-1113" class="btn btn-outline-secondary">COMP 1113</a>
+            <a href="#comm-1116" class="btn btn-outline-secondary">COMM 1116</a>
+
+        </div>
+
+        <div class="card-deck">
+            <div id="comp-1510" class="card">
+                <h3 class="card-header">COMP 1510</h3>
+                <div class="card-body">
+                    <h4 class="card-prof-name">Bruce Link</h4>
+                    <p class="card-text">Quizzes</p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="" aria-label=""
+                            aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button">Submit</button>
+                            <p>Assignment</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label=""
+                                    aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="button">Love it</button>
+                                </div>
+                            </div>
+                            <p>Midterm</p>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="" aria-label=""
+                                    aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="button">Love it</button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div id="comp-1712" class="card">
+                <h3 class="card-header">COMP 1712</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Nandhini Ramachandran</h4>
+                    <div style="overflow-x:auto;">
+                        <table class="table">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Criteria</th>
+                                    <th>Percentage</th>
+                                    <th>Quantity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Lab Assignment</td>
+                                    <td>25%</td>
+                                    <td>12</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Group Assignments</td>
+                                    <td>25%</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Midterm</td>
+                                    <td>25%</td>
+                                    <td>1</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Final</td>
+                                    <td>25%</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="comp-1536" class="card">
+                <h3 class="card-header">COMP 1536</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Arron Ferguson</h4>
+                    <p class="card-text">Email: Arron_Ferguson@bcit.ca </p>
+                    <p class="card-text">Location: SW2 Room 124</p>
+                    <p class="card-text">Office hours M 1:30pm-3:20pm, F 2:00pm-3:30pm</p>
+                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div id="comp-1930" class="card">
+                <h3 class="card-header">COMP 1930</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Carly Orr</h4>
+                    <p class="card-text">Email: Carly_Wong_Orr@bcit.ca</p>
+                    <p class="card-text">Location: SW2-319</p>
+                    <p class="card-text">Office hours M 1:30pm-3:20pm, W 2:00pm-3:30pm</p>
+                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+            <div id="comp-1100" class="card">
+                <h3 class="card-header">COMP 1100</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Donna Turner</h4>
+                    <p class="card-text">Email: dturner80@bcit.ca</p>
+                    <p class="card-text">Location: SW2 - 129</p>
+                    <p class="card-text">Office hours T 12:30pm-4:30pm, W 10:00am-11:30am</p>
+                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div id="comp-1113" class="card">
+                <h3 class="card-header">COMP 1113</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Paul Rozman</h4>
+                    <p class="card-text">Email: Paul_Rozman@bcit.ca</p>
+                    <p class="card-text">Location: SW2-229</p>
+                    <p class="card-text">Office hours M 1:30pm-3:20pm, T 2:00pm-3:30pm</p>
+                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div id="comm-1116" class="card">
+                <h3 class="card-header">COMM 1116</h3>
+                <div class="card-body">
+                    <h4 class="card-title">Sam Lee</h4>
+                    <p class="card-text">Email: slee789@bcit.ca</p>
+                    <p class="card-text">Location: SW2-260</p>
+                    <p class="card-text">Office hours M 1:30pm-3:20pm, F 10:00am-2:30pm</p>
+                    <a href="#!" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
