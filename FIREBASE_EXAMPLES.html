@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>My BCIT Project</title>
+    <title>FIREBASE EXAMPLES</title>
     <meta name="comp1930 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
 
@@ -29,27 +29,14 @@
     <!------------------------------------------------------------------------------>
     <!-- Optional styles and scripts of your own                                  -->
     <!------------------------------------------------------------------------------>
-    
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyDaE-SIkxEe_20i33sdDVA_Gpfs6STETqo",
-            authDomain: "oct31-3f384.firebaseapp.com",
-            databaseURL: "https://oct31-3f384.firebaseio.com",
-            projectId: "oct31-3f384",
-            storageBucket: "oct31-3f384.appspot.com",
-            messagingSenderId: "240584166699",
-            appId: "1:240584166699:web:584bfa5362305d3f64c96e"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
+    <script src="scripts/firebase_config.js"></script>
+
 </head>
 
 <body>
-    <h1>Welcome to Jessica's Amazing App</h1>
+    <h1>Welcome to Firebase Example</h1>
 
+<<<<<<< HEAD:login_firebase.html
     <h2>Let's read from the datebase: <span id="stuff">stuff</span></h2>
     <p id="grade" >66</p>;
     <script>
@@ -61,44 +48,39 @@
         });
         
         /*db.collection("users").doc("courses").collection("1510").doc("quiz").onSnapshot(function (snap) {
+=======
+    <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
+    <p id="grade" >77</p>
+    <p id="course" >1510</p>
+
+    <script>
+        //Retrieve course info from database and place onto HTML
+        db.collection("courses").doc("1510").onSnapshot(function (snap) {
+>>>>>>> beca394e4f59135a263faf9894ceaf9620c9f43b:FIREBASE_EXAMPLES.html
             console.log("Current data is...", snap.data());
-            document.getElementById('stuff').innerHTML = snap.data().message;
-            // another way is snap.data()["message"]
+            document.getElementById('stuff').innerHTML = snap.data().description +" "+  snap.data().room;
+          
 
         });
+<<<<<<< HEAD:login_firebase.html
         */
        
+=======
+
+        var courseNumber = document.getElementById("course").innerHTML;
+>>>>>>> beca394e4f59135a263faf9894ceaf9620c9f43b:FIREBASE_EXAMPLES.html
         var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
         console.log("GRADE " + gradeOfQuiz1);
+        console.log("Coursenum " + courseNumber);    
 
-        var grade = db.collection("courses");
-        grade.doc("1510").set({
-            name: "quiz",
- 
-            grade: [gradeOfQuiz1]
-        });
+        var grade = db.collection("users").doc("testUser4").collection("gradebook");
+        console.log("GRADE:" + grade)
+        grade.doc(courseNumber).set({
+            name: "assignment",
+            grade: [gradeOfQuiz1]});
 
-        var citiesRef = db.collection("cities");
-
-        citiesRef.doc("SF").set({
-            name: "San Francisco",
-            state: "CA",
-            country: "USA",
-            capital: false,
-            population: 860000,
-            regions: ["west_coast", "norcal"]
-        });
-        citiesRef.doc("LA").set({
-            name: "Los Angeles",
-            state: "CA",
-            country: "USA",
-            capital: false,
-            population: 3900000,
-            regions: ["west_coast", "socal"]
-        });
 
     </script>
-
 </body>
 
 </html>
