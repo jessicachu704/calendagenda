@@ -52,7 +52,6 @@ function showCalendar(month, year) {
                 row.appendChild(divCol);
             }
             else if (date > daysInMonth) {
-                console.log("busted date" + date);
                 break;
                 
             }
@@ -69,19 +68,32 @@ function showCalendar(month, year) {
                 divCol.addEventListener("click", numberPopClicked);
                 cell.classList.add("calendar-table__item");
 
-
+                //Column of due dates
                 if(j == 5){
                     cell.classList.add("calendar-table__event");
                 }
-
+                //single due date
                 if(date == 6){
-                    cell.classList.add("calendar-table__event");
+                   cell.classList.add("calendar-table__event");
                 }
+                //occasional due date
+                db.collection("courses").doc("1510").collection("assessments").doc("assignments").onSnapshot(function(snap){
+                  duedate =  snap.data().duedates;
+                  console.log("hi", duedate[2]);
+ 
+                  let d = (date);
+                  console.log("hi2 ", d);
 
+                  if((d) == duedate[2]){
+                    console.log("hi");
+                    cell.classList.add("calendar-table__event");
+                  }
+                });
+
+
+                //today circle
                 if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
-                    cell.classList.add("calendar-table__today");
-                    console.log("date " + date + month)
-
+                    //cell.classList.add("calendar-table__today");
                 } 
 
 
@@ -95,13 +107,7 @@ function showCalendar(month, year) {
 
 }
 
-//myFunction();
-function myFunction() {
-    var x = document.getElementsByClassName("calendar-table__col");
-    for(let i = 0; i < x.length ; i++){
-        x[i].addEventListener("click", numberPopClicked);
-    }
-  }
+
 
     function numberPopClicked(e){
         let target = e.target || e.insertAdjacentElement;
@@ -141,37 +147,19 @@ function myFunction() {
         }
 
         event.append(clickDate, eventList);
-
-
-
-
-
-/**
- * 
-        <span class="events__title">Oct 16th</span>
-        <ul class="events__list">
-          <li class="events__item">
-            <div class="events__item--left">
-              <span class="events__name">Java Assignment 1</span>
-              <span class="events__percent">5%</span>
-              <span class="events__date">Oct 5</span>
-            </div>
-            <span class="events__tag">12 PM</span>
-          </li>
-          <li class="events__item">
-            <div class="events__item--left">
-              <span class="events__name">Java Quiz</span>
-              <span class="events__percent">5%</span>
-              <span class="events__date">Oct 7</span>
-            </div>
-            <span class="events__tag">10  pm</span>
-          </li>
-
-        </ul>
- */
     }
 
+
+
     function retrieveTest(){
+      var duedate = new Array();
+      db.collection("courses").doc("1510").collection("assessments").doc("assignments").onSnapshot(function(snap){
+        duedate =  snap.data().duedates;
+      });
+    return duedate;
+    }
+    var hi = retrieveTest();
+
 //Retrieve course info from database and place onto HTML
 db.collection("courses").doc("1536").onSnapshot(function (snap) {
   //  console.log("Current data is...", snap.data());
@@ -179,4 +167,4 @@ db.collection("courses").doc("1536").onSnapshot(function (snap) {
   
 
 });
-}
+
