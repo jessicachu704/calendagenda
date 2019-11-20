@@ -36,39 +36,43 @@
 <body>
     <h1>Welcome to Firebase Example</h1>
 
-<<<<<<< HEAD:login_firebase.html
-    <h2>Let's read from the datebase: <span id="stuff">stuff</span></h2>
-    <p id="grade" >66</p>;
-    <script>
-        db.collection("quotes").doc("789").onSnapshot(function (snap) {
-            console.log("Current data is...", snap.data());
-            document.getElementById('stuff').innerHTML = snap.data().message;
-            // another way is snap.data()["message"]
-
-        });
-        
-        /*db.collection("users").doc("courses").collection("1510").doc("quiz").onSnapshot(function (snap) {
-=======
     <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
     <p id="grade" >77</p>
     <p id="course" >1510</p>
 
     <script>
         //Retrieve course info from database and place onto HTML
-        db.collection("courses").doc("1510").onSnapshot(function (snap) {
->>>>>>> beca394e4f59135a263faf9894ceaf9620c9f43b:FIREBASE_EXAMPLES.html
+        db.collection("courses").doc("1536").onSnapshot(function (snap) {
             console.log("Current data is...", snap.data());
-            document.getElementById('stuff').innerHTML = snap.data().description +" "+  snap.data().room;
+            document.getElementById('stuff').innerHTML = snap.data().name +" "+  snap.data().room;
           
 
         });
-<<<<<<< HEAD:login_firebase.html
-        */
-       
-=======
 
+        var citiesRef = db.collection("ceshi");
+
+citiesRef.doc("hi").set({
+    name: "San Francisco", state: "CA", country: "USA",
+    capital: false, population: 860000,
+    regions: ["west_coast", "norcal"] });
+citiesRef.doc("LA").set({
+    name: "Los Angeles", state: "CA", country: "USA",
+    capital: false, population: 3900000,
+    regions: ["west_coast", "socal"] });
+citiesRef.doc("DC").set({
+    name: "Washington, D.C.", state: null, country: "USA",
+    capital: true, population: 680000,
+    regions: ["east_coast"] });
+citiesRef.doc("TOK").set({
+    name: "Tokyo", state: null, country: "Japan",
+    capital: true, population: 9000000,
+    regions: ["kanto", "honshu"] });
+citiesRef.doc("TP").set({
+    name: "Taipei", state: null, country: "Taiwan",
+    capital: true, population: 21500000,
+    regions: ["Taipei", "Taipei"] });
+/*
         var courseNumber = document.getElementById("course").innerHTML;
->>>>>>> beca394e4f59135a263faf9894ceaf9620c9f43b:FIREBASE_EXAMPLES.html
         var gradeOfQuiz1 = document.getElementById("grade").innerHTML;
         console.log("GRADE " + gradeOfQuiz1);
         console.log("Coursenum " + courseNumber);    
@@ -79,7 +83,7 @@
             name: "assignment",
             grade: [gradeOfQuiz1]});
 
-
+*/
     </script>
 </body>
 
