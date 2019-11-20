@@ -13,9 +13,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="style/calendar.css">
+
+
+    <!-- Add Firebase products that you want to use                               -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <!-- Optional styles and scripts of your own                                  -->
+
+    <script src="scripts/firebase_config.js"></script>
+
 </head>
 <body>
+<!-- //Make array of due dates within that month
+  Color code = need seperate arrays.
+  For each date, compare if date matches due date, if matches -> make it into event
+  other wise dont.
 
+-->
   <div class="main-container-wrapper">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -45,13 +64,12 @@
     <main>
       <div class="calendar-container">
         <div class="calendar-container__header">
-          <button class="calendar-container__btn calendar-container__btn--left" title="Previous">
-            <i class="icon ion-ios-arrow-back"></i>
-          </button>
-          <h2 class="calendar-container__title">October 2018</h2>
-          <button class="calendar-container__btn calendar-container__btn--right" title="Next">
-            <i class="icon ion-ios-arrow-forward"></i>
-          </button>
+                
+
+ 
+          <h3 class="calendar-container__title" id="monthAndYear">Nov</h3>
+          <a href="#" onclick="previous()" class="previous round">&#8249;</a>
+          <a href="#"  onclick="next()" class="next round">&#8250;</a>
         </div>
         <div class="calendar-container__body">
           <div class="calendar-table">
@@ -66,220 +84,22 @@
                 <div class="calendar-table__col">S</div>
               </div>
             </div>
-            <div class="calendar-table__body">
-              <div class="calendar-table__row">
-                <div class="calendar-table__col calendar-table__inactive">
-                  <div class="calendar-table__item">
-                    <span>30</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col calendar-table__today">
-                  <div class="calendar-table__item">
-                    <span>1</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>2</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>3</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>4</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col calendar-table__event">
-                  <div class="calendar-table__item">
-                    <span>5</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>6</span>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-table__row">
-                <div class="calendar-table__col calendar-table__event">
-                  <div class="calendar-table__item">
-                    <span>7</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>8</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>9</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>10</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>11</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>12</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>13</span>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-table__row">
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>14</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>15</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col ">
-                  <div class="calendar-table__item">
-                    <span>16</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>17</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col ">
-                  <div class="calendar-table__item">
-                    <span>18</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>19</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>20</span>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-table__row">
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>21</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>22</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>23</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>24</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>25</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>26</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>27</span>
-                  </div>
-                </div>
-              </div>
-              <div class="calendar-table__row">
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>28</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>29</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>30</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col">
-                  <div class="calendar-table__item">
-                    <span>31</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col calendar-table__event calendar-table__inactive">
-                  <div class="calendar-table__item">
-                    <span>1</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col calendar-table__inactive">
-                  <div class="calendar-table__item">
-                    <span>2</span>
-                  </div>
-                </div>
-                <div class="calendar-table__col calendar-table__inactive">
-                  <div class="calendar-table__item">
-                    <span>3</span>
-                  </div>
-                </div>
+            <div class="calendar-table__body" id="calendar-body">
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="events-container">
-        <span class="events__title">Oct 16th</span>
-        <ul class="events__list">
-          <li class="events__item">
-            <div class="events__item--left">
-              <span class="events__name">Java Assignment 1</span>
-              <span class="events__percent">5%</span>
-              <span class="events__date">Oct 5</span>
-            </div>
-            <span class="events__tag">12 PM</span>
-          </li>
-          <li class="events__item">
-            <div class="events__item--left">
-              <span class="events__name">Java Quiz</span>
-              <span class="events__percent">5%</span>
-              <span class="events__date">Oct 7</span>
-            </div>
-            <span class="events__tag">10  pm</span>
-          </li>
-
-        </ul>
+      <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
+      <div class="events-container" id="event-body">
       </div>
+
     </main>
   </div>
+
+  <script src="scripts/calendar.js"></script>
+              
+
+</script>
 </body>
 </html>
