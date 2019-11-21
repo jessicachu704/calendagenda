@@ -13,13 +13,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
+  <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
   <!-- Optional styles and scripts of your own -->
   <link rel="stylesheet" href="styles/style.css">
   <script src="scripts/script.js"></script>
   <style>
-    body{
+    body {
       background-image: url(images/filler.jpg);
     }
+
     .content {
       text-align: center;
       margin: 5vh;
@@ -53,6 +60,7 @@
       border-radius: 3%
     }
   </style>
+  <script src="scripts/firebase_config.js"></script>
 </head>
 
 <body>
@@ -62,7 +70,7 @@
       aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="#!">Calendagenda</a>
+    <a class="navbar-brand" href="#!"><img class="card-image" src="images/logo.jpg" width="50" height="50"/></a>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -108,9 +116,9 @@
       <div id="comp-1510" class="card">
         <h3 class="card-header">COMP 1510</h3>
         <div class="card-body">
-          <h4 class="card-prof-name">Bruce Link</h4>
-          <p class="card-text">Email: Bruce_Link@bcit.ca</p>
-          <p class="card-text">Location: SW02-365</p>
+          <h4 class="card-prof-name"><span id=1510ins>ins</span></h4>
+          <p class="card-text"><span id=1510email>email</span></p>
+          <p class="card-text">Location:<span id=1510room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, T 4:00pm-5:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -119,9 +127,9 @@
       <div id="comp-1712" class="card">
         <h3 class="card-header">COMP 1712</h3>
         <div class="card-body">
-          <h4 class="card-title">Nandhini Ramachandran</h4>
-          <p class="card-text">Email: nramachandran1@bcit.ca</p>
-          <p class="card-text">Location: SW2 301</p>
+          <h4 class="card-title"><span id=1712ins>ins</span></h4>
+          <p class="card-text"><span id=1712email>email</span></p>
+          <p class="card-text">Location: <span id=1712room>room</span></p>
           <p class="card-text">Office hours M 8:30am-10:20am, R 4:00pm-5:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -129,9 +137,9 @@
       <div id="comp-1536" class="card">
         <h3 class="card-header">COMP 1536</h3>
         <div class="card-body">
-          <h4 class="card-title">Arron Ferguson</h4>
-          <p class="card-text">Email: Arron_Ferguson@bcit.ca </p>
-          <p class="card-text">Location: SW2 Room 124</p>
+          <h4 class="card-title"><span id=1536ins>instructor</span></h4>
+          <p class="card-text"><span id=1536mail>email </span></p>
+          <p class="card-text">Location: <span id=1536Room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, F 2:00pm-3:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -182,7 +190,10 @@
     </div>
   </div>
 
-
+  <script>
+ 
+    
+  </script>
 </body>
 
 </html>
