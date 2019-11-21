@@ -64,10 +64,7 @@
             border-radius: 3%
         }
 
-        .btn-primary {
 
-            margin-top: 20px;
-        }
     </style>
 </head>
 
@@ -130,17 +127,10 @@
                     <br>
                     <p class="card-text">Quiz 1: <span id="quiz1">test1</span></p>
                     <p class="card-text">Quiz 2: <span id="quiz2">test2</span></p>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-whatever="lab">Submit Lab Assignmnet Marks</button>
-                    <br>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-whatever="assignment">Submit Assignment Marks</button>
-                    <br>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-whatever="midterm">Submit Midterm Marks</button>
-                    <br>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-whatever="final">Submit Final Marks</button>
+                    <p class="card-text">Quiz 3: <span id="quiz3">test3</span></p>
+                    <p class="card-text">Quiz 4: <span id="quiz4">test4</span></p>
+                    <p class="card-text">Quiz 5: <span id="quiz5">test5</span></p>
+                    <p class="card-text">Average of the quizzes: <span id="averageQuizzes">Average</span></p>
 
 
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -283,9 +273,45 @@
     <script>
         db.collection("users").doc("q51gBpz2HbJ7MFnUUhd6").collection("gradebook").doc("1510").onSnapshot(function (
             snap) {
+            
+            // This code shows the data of the quizzes and the type
             console.log("Current data is...", snap.data().quizzes);
-            document.getElementById('quiz1').innerHTML = snap.data().quizzes;
+            console.log(typeof snap.data().quizzes);
+            
+            // This gets the quiz data and places in the html
+            document.getElementById('quiz1').innerHTML = snap.data().quizzes[0];
+            document.getElementById('quiz2').innerHTML = snap.data().quizzes[1];
+            document.getElementById('quiz3').innerHTML = snap.data().quizzes[2];
+            document.getElementById('quiz4').innerHTML = snap.data().quizzes[3];
+            document.getElementById('quiz5').innerHTML = snap.data().quizzes[4];
+            
+            // created a variable for the amount of quiz
+            var numberQuiz = snap.data().quizzes.length;
+            
+            // add each quiz and the number of the quiz to the console
+            console.log(quiz1);
+            console.log(quiz2);
+            console.log(quiz3);
+            console.log(quiz4);
+            console.log(quiz5);
+            console.log(numberQuiz);
+            
+            // create a sum and average variable
+            var sum = 0;
+            var averageQuiz = 0; 
+            
+            // for loop so that it loops the right amount of average of the quizzes
+            for(var i = 0; i < numberQuiz; i++){
 
+                // add the sum each time there is a quiz
+                sum += parseFloat(snap.data().quizzes[i]);
+            
+            }
+            averageQuiz = sum / numberQuiz;
+            
+            // displays the quiz average in the html
+            document.getElementById('averageQuizzes').innerHTML = averageQuiz;
+            
 
         });
     </script>
