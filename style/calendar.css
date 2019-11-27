@@ -25,18 +25,25 @@
   }
   
   .next {
-    background-color: #4CAF50;
+    background-color: #6FC2AA;
     color: white;
   }
   
   .round {
+    position:relative;
+    left: 30px;
     border-radius: 50%;
+    padding: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
   .calendar-container__btn:hover, .calendar-container__btn:focus {
     color: #9FAAB7;
     transition: all 0.3s ease-in;
   }
   .calendar-container__title {
+    padding-right: 140px;
     color: #222741;
     font-size: 20px;
     font-weight: 700;
@@ -83,34 +90,29 @@
     height: 38px;
   }
 
+  .calendar-table__body .calendar-table__col {
+    width: 40px;
+    height: 42px;
+    padding-bottom: 2px;
+  }
 
-@media (min-width: 360px) {
+
+@media screen and (max-width: 480px) {
   .calendar-table__header .calendar-table__col {
     width: 46px;
   }
-}
-@media (min-width: 410px) {
-  .calendar-table__header .calendar-table__col {
-    width: 54px;
+  .round{
+    left: -15px;
   }
 }
-.calendar-table__body .calendar-table__col {
-  width: 40px;
-  height: 42px;
-  padding-bottom: 2px;
-}
+
 @media (min-width: 360px) {
   .calendar-table__body .calendar-table__col {
     width: 46px;
     height: 48px;
   }
 }
-@media (min-width: 410px) {
-  .calendar-table__body .calendar-table__col {
-    width: 54px;
-    height: 56px;
-  }
-}
+
 .calendar-table__today  {
   border-color: #FEFEFE;
   background-color: #F2F6F8;
