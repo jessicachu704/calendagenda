@@ -5,23 +5,25 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 var dueDateList  = [];
 let dueDateObject = new Object();
 let monthAndYear = document.getElementById("monthAndYear");
-      //Retrieve course info from database and place onto HTML
-      db.collection("courses").doc("1536").onSnapshot(function (snap) {
-      // console.log("Current data is...", snap.data());
-        document.getElementById('stuff').innerHTML = snap.data().name +" "+  snap.data().room;
-      
 
-    });
 
 
 function updateDate(){
     console.log("DATE, " + months[currentMonth] + " " + today.getDate() + " " + currentYear);
-
-    document.getElementById("cl_copy").innerHTML = "";
+    document.getElementById('cl_copy').innerHTML= "HELO";
+  //  console.log("date, " + d);
+   // document.getElementById("cl_copy").innerHTML = "hi";
 
    // date.innerHTML = ""+ months[currentMonth] + " " + today.getDate() + " " + currentYear;
 }
 updateDate();
+      //Retrieve course info from database and place onto HTML
+      db.collection("courses").doc("1536").onSnapshot(function (snap) {
+        // console.log("Current data is...", snap.data());
+          document.getElementById('stuff').innerHTML = snap.data().name +" "+  snap.data().room;
+        
+  
+      });
 /*
 createList("1510", "assignments");
 createList("1510", "midterm");
