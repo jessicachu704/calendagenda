@@ -26,11 +26,9 @@
     <!-- Optional styles and scripts of your own                                  -->
     <!------------------------------------------------------------------------------>
     <script src="scripts/firebase_config.js"></script>
-    <script src="scripts/main.js"></script>
+
     <link rel="stylesheet" href="style/main.css">
     <style>
-
-
     </style>
 </head>
 
@@ -72,10 +70,7 @@
                     <div class="about-us">
                         
                         <div class="calendar_header">
-                            <h1 class = "header_title">Welcome back!</h1>
-                            
-            <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
-                          
+                            <h1 class ="header_title">Welcome, <span id="userName">Username</span></h1>          
                           <div class="calendar_plan">
                             <div class="cl_plan">
                               <div class="cl_title">Today</div>
@@ -84,42 +79,16 @@
                             </div>
                           </div>
                         </div>
-                        <div class="events-container">
-                            <span class="events__title">This weeks schedule:</span>
-                            <ul class="events__list">
-                              <li class="events__item">
-                                <div class="events__item--left">
-                                  <span class="events__name">Java Assignment 1</span>
-                                  <span class="events__percent">5%</span>
-                                  <span class="events__date">Oct 5</span>
-                                </div>
-                                <span class="events__tag1">12 PM</span>
-                                <span class="events__tag2">COMP 1510 </span>
+                      
+                        <div class="events-container" id="event-body">
 
-
-                              </li>
-                              <li class="events__item">
-                                <div class="events__item--left">
-                                  <span class="events__name">Java Quiz</span>
-                                  <span class="events__percent">5%</span>
-                                  <span class="events__date">Oct 7</span>
-                                </div>
-                                <span class="events__tag1">10  pm</span>
-                                <span class="events__tag2">COMP 1510 </span>
-
-
-                              </li>
-                    
-                            </ul>
                           </div>
 
+                          
                     </div>
                     
             </section>
+            <script src="scripts/main.js"></script>
 
-
-              
-  
 </body>
 </html>
-

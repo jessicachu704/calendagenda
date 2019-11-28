@@ -20,7 +20,7 @@ function logoutUser() {
     });
   });
 }
-db.collection("users").doc(user.uid).collection("grades").doc(course)
+db.collection("users").doc(user.uid).collection("grades").doc(course);
 console.log(user.uid);
 
 
