@@ -8,6 +8,22 @@ let monthAndYear = document.getElementById("monthAndYear");
 
 
 
+// ---------------------------------------------
+// If the currently logged in user is authenticated,
+// then signout this person "user".
+// ---------------------------------------------
+function logoutUser() {
+  firebase.auth().onAuthStateChanged(function (user) {
+    var promise = firebase.auth().signOut();
+    promise.then(function () {
+      alert("logged out");
+    });
+  });
+}
+db.collection("users").doc(user.uid).collection("grades").doc(course)
+console.log(user.uid);
+
+
 function updateDate(){
     console.log("DATE, " + months[currentMonth] + " " + today.getDate() + " " + currentYear);
     document.getElementById('cl_copy').innerHTML= "HELO";
@@ -21,8 +37,7 @@ updateDate();
       db.collection("courses").doc("1536").onSnapshot(function (snap) {
         // console.log("Current data is...", snap.data());
           document.getElementById('stuff').innerHTML = snap.data().name +" "+  snap.data().room;
-        
-  
+      
       });
 /*
 createList("1510", "assignments");
