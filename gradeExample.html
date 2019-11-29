@@ -133,13 +133,6 @@
                     <p class="card-text">Quiz 3: <span id="quiz3">test3</span></p>
                     <p class="card-text">Quiz 4: <span id="quiz4">test4</span></p>
                     <p class="card-text">Quiz 5: <span id="quiz5">test5</span></p>
-                    <p class="card-text">Quiz 6: <span id="quiz6">test6</span></p>
-                    <p class="card-text">Quiz 7: <span id="quiz7">test7</span></p>
-                    <p class="card-text">Quiz 8: <span id="quiz8">test8</span></p>
-                    <p class="card-text">Quiz 9: <span id="quiz9">test9</span></p>
-                    <p class="card-text">Quiz 10: <span id="quiz10">test10</span></p>
-                    <p class="card-text">Quiz 11: <span id="quiz11">test11</span></p>
-                    <p class="card-text">Quiz 12: <span id="quiz12">test12</span></p>
                     <p class="card-text">Average of the quizzes: <span id="averageQuizzes">Average</span></p>
 
 
@@ -164,25 +157,19 @@
                                                 <option value="Quiz 3">Quiz 3</option>
                                                 <option value="Quiz 4">Quiz 4</option>
                                                 <option value="Quiz 5">Quiz 5</option>
-                                                <option value="Quiz 6">Quiz 6</option>
-                                                <option value="Quiz 7">Quiz 7</option>
-                                                <option value="Quiz 8">Quiz 8</option>
-                                                <option value="Quiz 9">Quiz 9</option>
-                                                <option value="Quiz 10">Quiz 10</option>
-                                                <option value="Quiz 11">Quiz 11</option>
-                                                <option value="Quiz 12">Quiz 12</option>
 
                                             </select>
                                         </div>
                                         <div class="form-group">
                                             <label for="message-text" id="mark" class="col-form-label">Marks</label>
-                                            <textarea class="form-control" id="message-text">n</textarea>
+                                            <textarea class="form-control" id="message-text"></textarea>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="submit" class="btn btn-primary">Submit Grade</button>
+                                    <button type="button" id="submit" class="btn btn-primary"
+                                        data-dismiss="modal">Submit Grade</button>
                                 </div>
                             </div>
                         </div>
@@ -211,7 +198,7 @@
             document.getElementById("submit").addEventListener("click", function (e) {
                 //Variables for different types of course and assessments
                 let course = "1510";
-                let type = "quizzes"
+                let type = "quizzes";
                 let quiznum = document.getElementById("experience").value;
                 let grade = document.getElementById("message-text").value;
                 console.log("PRESSED! " + quiznum + " " + grade);
@@ -229,11 +216,30 @@
             });
         }
 
+        showQuizMarks();
+        function showQuizMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                    .get().then(function (snap) {
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // let quizID = "#quiz'" + counter + "'";
+                            // console.log("Quiz IDs: " + quizID);
+                            var mark = doc.data().mark;
+                            // document.getElementById(quizID).innerHTML = mark;
+                            document.getElementById("quiz" + counter).innerHTML = mark;
+                            counter++;
+                        })
+                    });
+            })
+        }
+
         function getAverage(course, type) {
             firebase.auth().onAuthStateChanged(function (user) {
                 var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
                     .collection(type);
                 let sum = 0;
+                let totalQuiz = 0.0;
                 dbRef.onSnapshot(function (snap) {
                     //Checks each document in the collection(QUIZZES)
                     snap.forEach(function (doc) {
@@ -241,11 +247,12 @@
                         console.log(doc.data().name + " ", mark);
                         sum += mark;
 
+                        totalQuiz++
 
                     });
 
                     console.log("sum of marks ", sum);
-                    let average = sum / (3 * 5) * 100;
+                    let average = sum / totalQuiz;
                     console.log("AVERAGE ", average);
                     document.getElementById("averageQuizzes").innerHTML = average;
 
