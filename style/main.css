@@ -67,14 +67,13 @@
 
 
 
+
   .events__item {
-    position: relative;
-    right: 35px;
-    background: #fff;
+    background: white;
     border-left: 8px solid  #6FC2AA;
     border-radius: 2px;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.05);
-    padding: 15px 2px;
+    padding: 5px 13px;
     display: flex;
     align-items: center;
     margin-bottom: 16px;
