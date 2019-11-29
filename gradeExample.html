@@ -83,20 +83,22 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!">Calendar</a>
+                    <a class="nav-link" href="calendar.html">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!">Office Hours</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Course Information</a>
+                    <a class="nav-link" href="grades.html">Grades</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#!">Help</a>
+                    <a class="nav-link" href="officehours.html">Office Hours</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="courseinformation.html">Course Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="loginpage.html" onclick="logoutUser()" id="logout">Log out</a>
                 </li>
             </ul>
         </div>
@@ -168,8 +170,8 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="submit" class="btn btn-primary"
-                                        data-dismiss="modal">Submit Grade</button>
+                                    <button type="button" id="submit" class="btn btn-primary" data-dismiss="modal"
+                                        onClick="refresh">Submit Grade</button>
                                 </div>
                             </div>
                         </div>
@@ -217,16 +219,14 @@
         }
 
         showQuizMarks();
+
         function showQuizMarks() {
             firebase.auth().onAuthStateChanged(function (user) {
                 db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
                     .get().then(function (snap) {
                         var counter = 1;
                         snap.forEach(function (doc) {
-                            // let quizID = "#quiz'" + counter + "'";
-                            // console.log("Quiz IDs: " + quizID);
                             var mark = doc.data().mark;
-                            // document.getElementById(quizID).innerHTML = mark;
                             document.getElementById("quiz" + counter).innerHTML = mark;
                             counter++;
                         })
