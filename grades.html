@@ -217,10 +217,11 @@
 
         function showQuizMarks() {
             firebase.auth().onAuthStateChanged(function (user) {
-                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes").orderBy("name")
                     .get().then(function (snap) {
                         var counter = 1;
                         snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
                             var mark = doc.data().mark;
                             document.getElementById("quiz" + counter).innerHTML = mark;
                             counter++;
