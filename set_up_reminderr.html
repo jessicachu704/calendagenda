@@ -10,9 +10,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <!-- Optional styles and scripts of your own -->
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/reminder.js"></script>
+   
+    
     <!--Include firebase related things-->
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -120,7 +119,7 @@
                         <br />
                         <label for="appt">Time for your event:</label>
 
-                        <input type="time" id="time" name="appt" min="09:00" max="18:00" required>
+                        <input type="time" id="time" name="appt"  required>
                         <label for="formGroupExampleInput">Location: </label>
                         <input type="text" class="form-control" id="location">
                         
@@ -140,13 +139,15 @@
 
 </body>
 <script>
-let reminderTitle = document.getElementById("titel").innerHTML;
+    
+let reminderTitle = document.getElementById("title").innerHTML;
 let reminderDescription = document.getElementById("box").innerHTML;
 let reminderDate = document.getElementById("date").innerHTML;
 let reminderTime = document.getElementById("time").innerHTML;
 let reminderLocation = document.getElementById("location").innerHTML;
 console.log("Reminder" + reminderTitle + "" + reminderDescription + "" + reminderDate + "" + reminderTime);
 firebase.auth().onAuthStateChanged(function (user) {
+  
         console.log(user.uid);
         db.collection("users").doc(user.uid).collection("reminder")
         .add({
