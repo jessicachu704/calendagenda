@@ -30,9 +30,7 @@ function updateUsername(){
     document.getElementById('userName').innerHTML = username .substring(0,username.indexOf(" ")) + "!";
    });
   });
-}
-db.collection("users").doc(user.uid).collection("grades").doc(course);
-console.log(user.uid);
+};
 
 // ---------------------------------------------
 // Updates main page to today's date
