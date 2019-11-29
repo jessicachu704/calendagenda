@@ -140,8 +140,8 @@
         <h3 class="card-header">COMP 1536</h3>
         <div class="card-body">
           <h4 class="card-title"><span id=1536ins>instructor</span></h4>
-          <p class="card-text"><span id=1536mail>email </span></p>
-          <p class="card-text">Location: <span id=1536Room>room</span></p>
+          <p class="card-text"><span id=1536email>email </span></p>
+          <p class="card-text">Location: <span id=1536room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, F 2:00pm-3:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -150,9 +150,9 @@
       <div id="comp-1930" class="card">
         <h3 class="card-header">COMP 1930</h3>
         <div class="card-body">
-          <h4 class="card-title">Carly Orr</h4>
-          <p class="card-text">Email: Carly_Wong_Orr@bcit.ca</p>
-          <p class="card-text">Location: SW2-319</p>
+          <h4 class="card-title"><span id=1930ins>instructor</span></h4>
+          <p class="card-text"><span id=1910email>email</span></p>
+          <p class="card-text">Location: <span id=1910room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, W 2:00pm-3:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -171,9 +171,9 @@
       <div id="comp-1113" class="card">
         <h3 class="card-header">COMP 1113</h3>
         <div class="card-body">
-          <h4 class="card-title">Paul Rozman</h4>
-          <p class="card-text">Email: Paul_Rozman@bcit.ca</p>
-          <p class="card-text">Location: SW2-229</p>
+          <h4 class="card-title"><span id = 1113ins>instructor</span></h4>
+          <p class="card-text"><span id=1113email>email</span></p>
+          <p class="card-text">Location: <span id=1113room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, T 2:00pm-3:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -181,9 +181,9 @@
       <div id="comm-1116" class="card">
         <h3 class="card-header">COMM 1116</h3>
         <div class="card-body">
-          <h4 class="card-title">Sam Lee</h4>
-          <p class="card-text">Email: slee789@bcit.ca</p>
-          <p class="card-text">Location: SW2-260</p>
+          <h4 class="card-title"><span id=1116ins>instructor</span></h4>
+          <p class="card-text"><span id=1116email>email</span></p>
+          <p class="card-text">Location: <span id=1116room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, F 10:00am-2:30pm</p>
           <a href="#!" class="btn btn-primary">Go somewhere</a>
         </div>
@@ -193,7 +193,58 @@
   </div>
 
   <script>
-
+function info1536() {
+  db.collection("Courses").doc("1536").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1536ins').innerHTML = snap.data().instructor
+    document.getElementById('1536email').innerHTML = snap.data().email
+    document.getElementById('1536room').innerHTML = snap.data().room
+  });
+}
+function info1510() {
+  db.collection("Courses").doc("1510").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1510ins').innerHTML = snap.data().instructor
+    document.getElementById('1510email').innerHTML = snap.data().email
+    document.getElementById('1510room').innerHTML = snap.data().room
+  });
+}
+function info1712() {
+  db.collection("Courses").doc("1712").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1712ins').innerHTML = snap.data().instructor
+    document.getElementById('1712email').innerHTML = snap.data().email
+    document.getElementById('1712room').innerHTML = snap.data().room
+  });
+}
+function info1930() {
+  db.collection("Courses").doc("1930").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1930ins').innerHTML = snap.data().instructor
+    document.getElementById('1930email').innerHTML = snap.data().email
+    document.getElementById('1930room').innerHTML = snap.data().room
+  });
+}function info1113() {
+  db.collection("Courses").doc("1113").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1113ins').innerHTML = snap.data().instructor
+    document.getElementById('1113email').innerHTML = snap.data().email
+    document.getElementById('1113room').innerHTML = snap.data().room
+  });
+}function info1116() {
+  db.collection("Courses").doc("1116").onSnapshot(function (snap){
+    console.log("Current data is...". snap.data());
+    document.getElementById('1116ins').innerHTML = snap.data().instructor
+    document.getElementById('1116email').innerHTML = snap.data().email
+    document.getElementById('1116room').innerHTML = snap.data().room
+  });
+}
+info1536();
+info1116();
+info1113();
+info1930();
+info1712();
+info1510();
 
   </script>
 </body>
