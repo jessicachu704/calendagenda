@@ -109,18 +109,18 @@
                 <fieldset>
                     <div class="form-group">
                         <label for="formGroupExampleInput">Title: </label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
+                        <input type="text" class="form-control" id="title">
 
                         <label for="formGroupExampleInput2">Description: </label>
                         <input type="text" class="form-control" id="box">
                     </div>
                     <div>
                         <label for="formGroupExampleInput">Date: </label>
-                        <input type="date" name="day">
+                        <input type="date" name="day" id="date">
                         <br />
                         <label for="appt">Time for your event:</label>
 
-                        <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
+                        <input type="time" id="time" name="appt" min="09:00" max="18:00" required>
                         <label for="formGroupExampleInput">Location: </label>
                         <input type="text" class="form-control" id="location">
                         
@@ -139,5 +139,26 @@
 
 
 </body>
+<script>
+let reminderTitle = document.getElementById("titel").innerHTML;
+let reminderDescription = document.getElementById("box").innerHTML;
+let reminderDate = document.getElementById("date").innerHTML;
+let reminderTime = document.getElementById("time").innerHTML;
+let reminderLocation = document.getElementById("location").innerHTML;
+console.log("Reminder" + reminderTitle + "" + reminderDescription + "" + reminderDate + "" + reminderTime);
+firebase.auth().onAuthStateChanged(function (user) {
+        console.log(user.uid);
+        db.collection("users").doc(user.uid).collection("reminder")
+        .add({
+            name: reminderTitle,
+            description: reminderDescription,
+            date: reminderTime,
+            time: reminderTime,
+            location: reminderLocation
+
+        })
+      });
+
+</script>
 
 </html>
