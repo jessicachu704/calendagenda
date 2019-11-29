@@ -6,13 +6,17 @@ var dueDateList = [];
 let dueDateObject = new Object();
 let monthAndYear = document.getElementById("monthAndYear");
 
-
 createList("1510", "assignments");
 createList("1510", "midterm");
+createList("1510", "quizzes");
+createList("1510", "lab");
+createList("1510", "final");
+createList("1536", "quizzes");
+createList("1536", "lab");
 createList("1712", "final");
 createList("1536", "final");
 createList("1113", "final");
-createList("1510", "final");
+createList("1113", "assignments");
 createList("1712", "assignments");
 
 //Create list of duedates for selected course and assessment type
@@ -24,6 +28,11 @@ function createList(course, type) {
       let percent = snap.data().weight / snap.data().max;
 
       for (let i = 0; i < snap.data().duedates.length; i++) {
+        if(type == "assignments") type = "Assignment";
+        if(type == "final") type = "Final";
+        if(type == "quizzes") type = "Quiz";
+        if(type == "lab") type = "Lab";
+        if(type == "final") type = "Final";
         duedate = snap.data().duedates[i];
         dueDateObject = {
           course: course,
@@ -107,8 +116,8 @@ function showCalendar(month, year) {
 
 function createEventList(e) {
   let target = e.target || e.insertAdjacentElement;
-  console.log("TARGET " + e.target);
-  console.log("HI " + months[currentMonth] + " " + target.innerHTML + " I WAS CLICKED");
+  //console.log("TARGET " + e.target);
+  //console.log("HI " + months[currentMonth] + " " + target.innerHTML + " I WAS CLICKED");
   let event = document.getElementById("event-body");
   event.innerHTML = "";
 

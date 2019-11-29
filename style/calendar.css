@@ -43,7 +43,7 @@
     transition: all 0.3s ease-in;
   }
   .calendar-container__title {
-    padding-right: 140px;
+    padding-right: 80px;
     color: #222741;
     font-size: 20px;
     font-weight: 700;

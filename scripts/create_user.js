@@ -1,4 +1,8 @@
 
+
+
+
+
 // Fucntion that creates a new document in the users collection
 function createUser() {
  

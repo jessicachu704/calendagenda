@@ -1,23 +1,57 @@
+$(document).ready(function () {
+
+  updateUsername();
+  updateDate();
+
+  $('#signOutButton').click(function (x) {
+      console.log("PRESSED SIGNOUT BUTTON");
+      signout();
+     location.href = "./loginpage.html";
+  });
+});
+
 let today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+let currentWeek = [];
 var dueDateList  = [];
 let dueDateObject = new Object();
 let monthAndYear = document.getElementById("monthAndYear");
 
 
-updateUsername();
-updateDate();
+console.log("MONTH " + today.getMonth() + " TODAY: ", today.getDate() );
+for(let i =0; i < 7 ; i++){
+  let todayDate = today.getDate();
+  let todayMonth = today.getMonth();
+  if((todayDate + i) > 30 ){
+  todayDate = 1 -3   ;
+  if(todayMonth == 11){
+    todayMonth = 0;
+  }else{
+  todayMonth += 1;
+  }
+}
+todayDate += (i) ;
+
+  let dateObj =  {month: todayMonth,  date: (todayDate) };
+  currentWeek.push(dateObj);
+
+}
+//console.log(currentWeek );
 
 createList("1510", "assignments");
 createList("1510", "midterm");
+createList("1510", "quizzes");
+createList("1510", "lab");
+createList("1510", "final");
+createList("1536", "quizzes");
+createList("1536", "lab");
 createList("1712", "final");
 createList("1536", "final");
 createList("1113", "final");
-createList("1510", "final");
+createList("1113", "assignments");
 createList("1712", "assignments");
-
 // ---------------------------------------------
 // Updates main page with user's name.
 // ---------------------------------------------
@@ -31,7 +65,14 @@ function updateUsername(){
    });
   });
 };
-
+//Sigh out
+function signout() {
+  firebase.auth().onAuthStateChanged(function (user) {
+      firebase.auth().signOut().then(function () {
+          console.log("sign out");
+      });
+  });
+}
 // ---------------------------------------------
 // Updates main page to today's date
 // ---------------------------------------------
@@ -49,13 +90,18 @@ function createList(course, type){
       let percent = snap.data().weight/snap.data().max;
 
       for(let i = 0; i < snap.data().duedates.length; i++ ){
+        if(type == "assignments") type = "Assignment";
+        if(type == "final") type = "Final";
+        if(type == "quizzes") type = "Quiz";
+        if(type == "lab") type = "Lab";
+        if(type == "final") type = "Final";
         duedate =  snap.data().duedates[i];
         dueDateObject = {course: course, type: type, percent: percent, date: duedate};
         dueDateList.push(dueDateObject);
         
       }
       createEventList();
-      console.log("LIST " + dueDateList);
+   //   console.log("LIST " + dueDateList);
     });
 }
 
@@ -65,20 +111,29 @@ function createEventList() {
   event.innerHTML = "";
 
   let clickDate = document.createElement("div");
-  clickDate.innerHTML = months[currentMonth] + " " + today.getDate();
+  clickDate.innerHTML = "Your schedule this week: "; 
   clickDate.classList.add("events__title");
 
   let eventList = document.createElement("div");
   eventList.classList.add("events__list");
-
-  for (let i = 0; i < 10; i++) {
+ // let i = 3;
+ // console.log("DUE DATE OBJECT " ,dueDateList);
+  for (let i = 0; i < dueDateList.length; i++) {
+ // let j = 7;
+    for(let j = 0; j < currentWeek.length; j++){
     let due = dueDateList[i].date;
-    let current = months[currentMonth] + " " + today.getDate()
- //   if (due == current || )
-//    ||) {
+   // let current = months[currentMonth] + " " + today.getDate()
+    let weekDate = currentWeek[j].date;
+    let weekMonth = currentWeek[j].month;
+    let weekListItem = months[weekMonth] + " " + weekDate;
+    
+
+    if(due == weekListItem){
+    //  console.log("due date list: ", due + " vs week list: ",  weekListItem  );
+    //  console.log("they match!!!!!!!!!!!!");
       let title = dueDateList[i].type;
       let course = dueDateList[i].course;
-      let percent = dueDateList[i].percent + "%";
+      let percent = dueDateList[i].percent.toFixed(2) + "%";
       let time = "8PM";
 
       let eventItem = document.createElement("div");
@@ -89,40 +144,26 @@ function createEventList() {
       eventName.classList.add("events__name");
       eventName.innerHTML = course + " " + title;
 
-
-      /**
-       * 
-       *                             <span class="events__title">This weeks schedule:</span>
-                            <ul class="events__list">
-                              <li class="events__item">
-                                <div class="events__item--left">
-                                  <span class="events__name">Java Assignment 1</span>
-                                  <span class="events__percent">5%</span>
-                                  <span class="events__date">Oct 5</span>
-                                </div>
-                                <span class="events__tag1">12 PM</span>
-                                <span class="events__tag2">COMP 1510 </span>
-
-                              </li>
-                    
-                            </ul>
-       */
       getCourseColor(eventName, eventItem);
       let eventPercent = document.createElement("span");
-      eventPercent.innerHTML = percent;
+      //eventPercent.innerHTML = percent;
       eventPercent.classList.add("events__percent");
       let eventDate = document.createElement("span");
-      eventDate.classList.add("events__date");
-      eventDate.innerHTML = dueDateList[i].date;
+      eventDate.classList.add("events__tag2");
+      eventDate.innerHTML = percent;
       let eventTag = document.createElement("span");
       eventTag.classList.add("events__tag1");
-      eventTag.innerHTML = time;
+      eventTag.innerHTML = dueDateList[i].date;
       eventItemLeft.append(eventName, eventPercent, eventDate);
       eventItem.append(eventItemLeft, eventTag);
       eventList.appendChild(eventItem);
     
-  }
+    }
   event.append(clickDate, eventList);
+    
+
+}
+  }
 }
 
 function getCourseColor(eventName, eventItem) {
