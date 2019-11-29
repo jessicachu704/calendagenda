@@ -58,14 +58,15 @@ createList("1712", "assignments");
 function updateUsername(){
   firebase.auth().onAuthStateChanged(function (user) {
     console.log(user.uid);
-  db.collection("users").doc(user.uid).onSnapshot(function (snap) {
+  db.collection("users").doc(user.uid)
+  .onSnapshot(function (snap) {
     console.log("NAME " + snap.data().name);
     let username =snap.data().name; 
     document.getElementById('userName').innerHTML = username .substring(0,username.indexOf(" ")) + "!";
    });
   });
 };
-//Sigh out
+//Sign out
 function signout() {
   firebase.auth().onAuthStateChanged(function (user) {
       firebase.auth().signOut().then(function () {

@@ -1,10 +1,12 @@
+ 
 <!doctype html>
-
+ 
 <html lang="en">
 <head>
     <meta charset="utf-8"> 
-    <title>Home | Calendagenda</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendagenda</title>
+    <meta name="comp1930 boilerplate code" content="my bcit project">
+    <meta name="author" content="BCIT">
   
     <!-- Bootstrap for Mobile-first -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,122 +14,182 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!------------------------------------------------------------------------------>
-    <!-- Add Firebase products that you want to use                               -->
-    <!------------------------------------------------------------------------------>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-
-    <!------------------------------------------------------------------------------>
-    <!-- Optional styles and scripts of your own                                  -->
-    <!------------------------------------------------------------------------------>
-    <script src="scripts/firebase_config.js"></script>
-    <script src="scripts/main.js"></script>
-    <link rel="stylesheet" href="style/main.css">
+ 
+    <!-- Optional styles and scripts of your own -->
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
     <style>
+      body {
+      background-image: url(http://www.photos-public-domain.com/wp-content/uploads/2011/09/aqua-colored-fur-texture.jpg);
+      }
+    .card{
+ 
+        width: 300px;
+        height: 500px;
+        text-align: center;
+        background-color: white;
+        box-shadow:5px 10px 8px #888888;
+        top: 10vh;
+        align-self: center;
+        margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 375px; 
+    }
+    .btn-primary{
+        position: absolute;
+        left: 70px;
+        margin: 2vh;
+        background-color: #6FC2AA;
+        border: #6FC2AA;
+        display: block;
+        padding-left: 35px;
+        padding-right: 35px;
+ 
+    }
+    .btn-outline-primary{
+        position: absolute;
+        left: 70px;
+        bottom: 60px;
+        margin: 2vh;
+        border: 1px solid gray;
+        color: gray;
+        display: block;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .about-us,  p.about-us, .contact-us{
+            color: gray;
+            text-align: center;
+            margin: 4%;
+            margin-bottom: 60px;
+            border: 1px solid white;
+            border-radius: 5%;
+            padding: 15px;
+            padding-left: 0;
+            padding-right: 0;
+            background-color: white ;
+            
+        }
 
+    .landing-image{
+        height: 35%;
+        width: 100%;
+        border-radius: 2%;
+        
+        
+    }
+    .heading{
+        font-size: 22pt;
+        color:gray
+    }
+    .subtitle{
+        font-size: 18pt;
+        color: gray;
+    }
+
+ 
 
     </style>
 </head>
-
-<body background="images/filler.jpg">
+ 
+<body background="images/aquafur.jpg">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#!">Calendagenda</a>
 
+        <a class="navbar-brand" href="#!"><img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="50" height="50"/></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="calendar.html">Calendar</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="grades.html">Grades</a>
-          </li>
-            <li class="nav-item">
-                <a class="nav-link" href="officehours.html">Office Hours</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="courseinformation.html">Course Information</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+            </ul>
         </div>
     </nav>
+        <div class="card">
+                <div class="card-body">
+                </br><br>
+                <img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="150" height="150"/>
+                  <h4 class="card-title"><br>Calendagenda</h4>
+                  <h6 class="card-subtitle mb-2 text-muted">Get organized! Build better habits</h6>
+                  <button type="button" class="btn btn-primary" onclick="location.href = 'loginpage.html';">Login</button>
+                  <button type="button" class="btn btn-outline-primary" onclick="location.href = 'loginpage.html';">Signup</button>
+                </div>
+              </div>
 
+                             
+              <section class="about" id="about">
+                <div class="image-div">
+                    <img class="landing-image" src="images/office.jpg"/>
+                </div>
+                <div class="about-us">
 
-              <section class="about">
-                    <div class="about-us">
-                        
-                        <div class="calendar_header">
-                            <h1 class = "header_title">Welcome back!</h1>
-                            
-            <h2>Let's read from the database: <span id="stuff">stuff</span></h2>
-                          
-                          <div class="calendar_plan">
-                            <div class="cl_plan">
-                              <div class="cl_title">Today</div>
-                              <div class="cl_copy">25 November  2019</div>
-                              <div class="cl_add">
-                                <i class="fas fa-plus"></i>
-                              </div>
-                            </div>
-                          </div>
+                    <p class="heading">About</p>
+                    <p class="subtitle">Calendar app is designed to help people allow people to keep track
+                         with their schedules and be updated on their daily tasks.<br><br></h1>
+                    <p>We are first-year CST students driven to help others be organized. 
+                        We have considered many factors of a student's daily life to incorporate 
+                        into this project. <br><br>
+                
+                    </p>
+                </div>
+                
+        </section>
+ 
+            <section class="features-sect" id="features">
+                    <div class="image-div">
+                            <img class="landing-image" src="images/calen.jpg"/>
                         </div>
-                        <div class="events-container">
-                            <span class="events__title">This weeks schedule:</span>
-                            <ul class="events__list">
-                              <li class="events__item">
-                                <div class="events__item--left">
-                                  <span class="events__name">Java Assignment 1</span>
-                                  <span class="events__percent">5%</span>
-                                  <span class="events__date">Oct 5</span>
-                                </div>
-                                <span class="events__tag1">12 PM</span>
-                                <span class="events__tag2">COMP 1510 </span>
+                <div class="features">
+                <p class="heading"> Core Features</h1>
+                  <p >Our mission is to help you with time management.</p>
+                  <div class="feature-img-div"></div>
+                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
+                </div>
+                  <p>You can upload your course information and access it anytime.</p>
+                  <div class="feature-img-div">
+                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
+                </div>
+                  <p>Set up notifications with us and we will let you know when there is a due coming up.</p>
+                  <div class="feature-img-div">
+                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
+                </div>
+                  <br>
+                  <br>
+                  </div>
+              </section>
 
 
-                              </li>
-                              <li class="events__item">
-                                <div class="events__item--left">
-                                  <span class="events__name">Java Quiz</span>
-                                  <span class="events__percent">5%</span>
-                                  <span class="events__date">Oct 7</span>
-                                </div>
-                                <span class="events__tag1">10  pm</span>
-                                <span class="events__tag2">COMP 1510 </span>
+
+              <section class="contact-sect" id="contact">
+                    <div class="image-div">
+                            
+                        </div>
+                <div class="contact">
+                <p class="heading"></p> Contact us!</h1>
+                <img  src="images/social-media.png" style="width:50; height:30px">
+                  <br>
+                  </div>
+              </section>
 
 
-                              </li>
-                    
-                            </ul>
-                          </div>
-
-                    </div>
-                    
-            </section>
-
-            
-    <script>
-      //Retrieve course info from database and place onto HTML
-      db.collection("courses").doc("1536").onSnapshot(function (snap) {
-          console.log("Current data is...", snap.data());
-          document.getElementById('stuff').innerHTML = snap.data().name +" "+  snap.data().room;
-        
-
-      });
-</script>
-              
   
 </body>
 </html>
+ 
+ 
+ 
+ 
 
