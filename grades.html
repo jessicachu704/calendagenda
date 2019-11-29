@@ -133,15 +133,6 @@
                     <p class="card-text">Quiz 1: <span id="quiz1">test1</span></p>
                     <p class="card-text">Quiz 2: <span id="quiz2">test2</span></p>
                     <p class="card-text">Quiz 3: <span id="quiz3">test3</span></p>
-                    <p class="card-text">Quiz 4: <span id="quiz4">test4</span></p>
-                    <p class="card-text">Quiz 5: <span id="quiz5">test5</span></p>
-                    <p class="card-text">Quiz 6: <span id="quiz6">test6</span></p>
-                    <p class="card-text">Quiz 7: <span id="quiz7">test7</span></p>
-                    <p class="card-text">Quiz 8: <span id="quiz8">test8</span></p>
-                    <p class="card-text">Quiz 9: <span id="quiz9">test9</span></p>
-                    <p class="card-text">Quiz 10: <span id="quiz10">test10</span></p>
-                    <p class="card-text">Quiz 11: <span id="quiz11">test11</span></p>
-                    <p class="card-text">Quiz 12: <span id="quiz12">test12</span></p>
                     <p class="card-text">Average of the quizzes: <span id="averageQuizzes">Average</span></p>
 
 
@@ -157,34 +148,25 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form id="quizPop">
+                                    <form>
                                         <div class="form-group">
                                             <label>Quiz Number</label>
-                                            <select size="1" name="experience" id="quizSelection" class="form-control">
+                                            <select size="1" name="experience" id="experience" class="form-control">
                                                 <option value="Quiz 1" selected="selected">Quiz 1</option>
                                                 <option value="Quiz 2">Quiz 2</option>
                                                 <option value="Quiz 3">Quiz 3</option>
-                                                <option value="Quiz 4">Quiz 4</option>
-                                                <option value="Quiz 5">Quiz 5</option>
-                                                <option value="Quiz 6">Quiz 6</option>
-                                                <option value="Quiz 7">Quiz 7</option>
-                                                <option value="Quiz 8">Quiz 8</option>
-                                                <option value="Quiz 9">Quiz 9</option>
-                                                <option value="Quiz 10">Quiz 10</option>
-                                                <option value="Quiz 11">Quiz 11</option>
-                                                <option value="Quiz 12">Quiz 12</option>
+
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="message-text" class="col-form-label">Marks</label>
+                                            <label for="message-text" id="mark" class="col-form-label">Marks</label>
                                             <textarea class="form-control" id="message-text"></textarea>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="submitGrade"
-                                        data-dismiss="modal">Submit Grade</button>
+                                    <button type="button" id="submit" class="btn btn-primary" data-dismiss="modal">Submit Grade</button>
                                 </div>
                             </div>
                         </div>
@@ -198,102 +180,7 @@
 
         </div>
 
-        <div id="comp-1712" class="card">
-            <h3 class="card-header">COMP 1712</h3>
-            <div class="card-body">
-                <h4 class="card-title">Nandhini Ramachandran</h4>
-                <div style="overflow-x:auto;">
-                    <table class="table">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>#</th>
-                                <th>Criteria</th>
-                                <th>Percentage</th>
-                                <th>Quantity</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Lab Assignment</td>
-                                <td>25%</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Group Assignments</td>
-                                <td>25%</td>
-                                <td>2</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Midterm</td>
-                                <td>25%</td>
-                                <td>1</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Final</td>
-                                <td>25%</td>
-                                <td>1</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div id="comp-1536" class="card">
-            <h3 class="card-header">COMP 1536</h3>
-            <div class="card-body">
-                <h4 class="card-title">Arron Ferguson</h4>
-                <p class="card-text">Email: Arron_Ferguson@bcit.ca </p>
-                <p class="card-text">Location: SW2 Room 124</p>
-                <p class="card-text">Office hours M 1:30pm-3:20pm, F 2:00pm-3:30pm</p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
 
-        <div id="comp-1930" class="card">
-            <h3 class="card-header">COMP 1930</h3>
-            <div class="card-body">
-                <h4 class="card-title">Carly Orr</h4>
-                <p class="card-text">Email: Carly_Wong_Orr@bcit.ca</p>
-                <p class="card-text">Location: SW2-319</p>
-                <p class="card-text">Office hours M 1:30pm-3:20pm, W 2:00pm-3:30pm</p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-
-        <div id="comp-1100" class="card">
-            <h3 class="card-header">COMP 1100</h3>
-            <div class="card-body">
-                <h4 class="card-title">Donna Turner</h4>
-                <p class="card-text">Email: dturner80@bcit.ca</p>
-                <p class="card-text">Location: SW2 - 129</p>
-                <p class="card-text">Office hours T 12:30pm-4:30pm, W 10:00am-11:30am</p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div id="comp-1113" class="card">
-            <h3 class="card-header">COMP 1113</h3>
-            <div class="card-body">
-                <h4 class="card-title">Paul Rozman</h4>
-                <p class="card-text">Email: Paul_Rozman@bcit.ca</p>
-                <p class="card-text">Location: SW2-229</p>
-                <p class="card-text">Office hours M 1:30pm-3:20pm, T 2:00pm-3:30pm</p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-        <div id="comm-1116" class="card">
-            <h3 class="card-header">COMM 1116</h3>
-            <div class="card-body">
-                <h4 class="card-title">Sam Lee</h4>
-                <p class="card-text">Email: slee789@bcit.ca</p>
-                <p class="card-text">Location: SW2-260</p>
-                <p class="card-text">Office hours M 1:30pm-3:20pm, F 10:00am-2:30pm</p>
-                <a href="#!" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
 
     </div>
 
@@ -308,7 +195,7 @@
             document.getElementById("submit").addEventListener("click", function (e) {
                 //Variables for different types of course and assessments
                 let course = "1510";
-                let type = "quizzes"
+                let type = "quizzes";
                 let quiznum = document.getElementById("experience").value;
                 let grade = document.getElementById("message-text").value;
                 console.log("PRESSED! " + quiznum + " " + grade);
@@ -326,11 +213,28 @@
             });
         }
 
+        showQuizMarks();
+
+        function showQuizMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                    .get().then(function (snap) {
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            var mark = doc.data().mark;
+                            document.getElementById("quiz" + counter).innerHTML = mark;
+                            counter++;
+                        })
+                    });
+            })
+        }
+
         function getAverage(course, type) {
             firebase.auth().onAuthStateChanged(function (user) {
                 var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
                     .collection(type);
                 let sum = 0;
+                let totalQuiz = 0.0;
                 dbRef.onSnapshot(function (snap) {
                     //Checks each document in the collection(QUIZZES)
                     snap.forEach(function (doc) {
@@ -338,11 +242,12 @@
                         console.log(doc.data().name + " ", mark);
                         sum += mark;
 
+                        totalQuiz++
 
                     });
 
                     console.log("sum of marks ", sum);
-                    let average = sum / (3 * 5) * 100;
+                    let average = sum / totalQuiz;
                     console.log("AVERAGE ", average);
                     document.getElementById("averageQuizzes").innerHTML = average;
 
@@ -350,57 +255,6 @@
 
             });
         }
-
-
-
-
-
-
-
-
-        db.collection("users").doc("q51gBpz2HbJ7MFnUUhd6").collection("gradebook").doc("1510").onSnapshot(function (
-            snap) {
-
-            // This code shows the data of the quizzes and the type
-            console.log("Current data is...", snap.data().quizzes);
-            console.log(typeof snap.data().quizzes);
-
-            // This gets the quiz data and places in the html
-            document.getElementById('quiz1').innerHTML = snap.data().quizzes[0];
-            document.getElementById('quiz2').innerHTML = snap.data().quizzes[1];
-            document.getElementById('quiz3').innerHTML = snap.data().quizzes[2];
-            document.getElementById('quiz4').innerHTML = snap.data().quizzes[3];
-            document.getElementById('quiz5').innerHTML = snap.data().quizzes[4];
-
-            // created a variable for the amount of quiz
-            var numberQuiz = snap.data().quizzes.length;
-
-            // add each quiz and the number of the quiz to the console
-            console.log(quiz1);
-            console.log(quiz2);
-            console.log(quiz3);
-            console.log(quiz4);
-            console.log(quiz5);
-            console.log(numberQuiz);
-
-            // create a sum and average variable
-            var sum = 0;
-            var averageQuiz = 0;
-
-            // for loop so that it loops the right amount of average of the quizzes
-            for (var i = 0; i < numberQuiz; i++) {
-
-                // add the sum each time there is a quiz
-                sum += parseFloat(snap.data().quizzes[i]);
-
-            }
-            averageQuiz = sum / numberQuiz;
-
-            // displays the quiz average in the html
-            document.getElementById('averageQuizzes').innerHTML = averageQuiz;
-
-
-        });
     </script>
 
 
