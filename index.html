@@ -1,63 +1,71 @@
- 
 <!doctype html>
- 
+
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <title>Calendagenda</title>
     <meta name="comp1930 boilerplate code" content="my bcit project">
     <meta name="author" content="BCIT">
-  
+
     <!-- Bootstrap for Mobile-first -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
- 
+
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js"></script>
     <style>
-      body {
-      background-image: url(http://www.photos-public-domain.com/wp-content/uploads/2011/09/aqua-colored-fur-texture.jpg);
-      }
-    .card{
- 
-        width: 300px;
-        height: 500px;
-        text-align: center;
-        background-color: white;
-        box-shadow:5px 10px 8px #888888;
-        top: 10vh;
-        align-self: center;
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 375px; 
-    }
-    .btn-primary{
-        position: absolute;
-        left: 70px;
-        margin: 2vh;
-        background-color: #6FC2AA;
-        border: #6FC2AA;
-        display: block;
-        padding-left: 35px;
-        padding-right: 35px;
- 
-    }
-    .btn-outline-primary{
-        position: absolute;
-        left: 70px;
-        bottom: 60px;
-        margin: 2vh;
-        border: 1px solid gray;
-        color: gray;
-        display: block;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    .about-us,  p.about-us, .contact-us{
+        body {
+            background-image: url(http://www.photos-public-domain.com/wp-content/uploads/2011/09/aqua-colored-fur-texture.jpg);
+        }
+
+        .card {
+
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 5px 10px 8px #888888;
+            top: 10vh;
+            align-self: center;
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 375px;
+        }
+
+        .btn-primary {
+            position: absolute;
+            left: 70px;
+            margin: 2vh;
+            background-color: #6FC2AA;
+            border: #6FC2AA;
+            display: block;
+            padding-left: 35px;
+            padding-right: 35px;
+
+        }
+
+        .btn-outline-primary {
+            position: absolute;
+            left: 70px;
+            bottom: 60px;
+            margin: 2vh;
+            border: 1px solid gray;
+            color: gray;
+            display: block;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        .about-us,
+        p.about-us,
+        .contact-us {
             color: gray;
             text-align: center;
             margin: 4%;
@@ -67,40 +75,51 @@
             padding: 15px;
             padding-left: 0;
             padding-right: 0;
-            background-color: white ;
-            
+            background-color: white;
+
         }
 
-    .landing-image{
-        height: 35%;
-        width: 100%;
-        border-radius: 2%;
-        
-        
-    }
-    .heading{
-        font-size: 22pt;
-        color:gray
-    }
-    .subtitle{
-        font-size: 18pt;
-        color: gray;
-    }
+        .landing-image {
+            height: 35%;
+            width: 100%;
+            border-radius: 2%;
 
- 
 
+        }
+
+        .heading {
+            font-size: 22pt;
+            color: gray
+        }
+
+        .subtitle {
+            font-size: 18pt;
+            color: gray;
+        }
+
+        .ct-btn-scroll {
+            width: 49px;
+            height: 29px;
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
     </style>
 </head>
- 
+
 <body background="images/aquafur.jpg">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand" href="#!"><img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="50" height="50"/></a>
+        <a class="navbar-brand" href="#!"><img class="card-image"
+                src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A"
+                width="50" height="50" /></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item active">
@@ -118,78 +137,96 @@
             </ul>
         </div>
     </nav>
-        <div class="card">
-                <div class="card-body">
-                </br><br>
-                <img class="card-image" src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A" width="150" height="150"/>
-                  <h4 class="card-title"><br>Calendagenda</h4>
-                  <h6 class="card-subtitle mb-2 text-muted">Get organized! Build better habits</h6>
-                  <button type="button" class="btn btn-primary" onclick="location.href = 'loginpage.html';">Login</button>
-                  <button type="button" class="btn btn-outline-primary" onclick="location.href = 'loginpage.html';">Signup</button>
-                </div>
-              </div>
-
-                             
-              <section class="about" id="about">
-                <div class="image-div">
-                    <img class="landing-image" src="images/office.jpg"/>
-                </div>
-                <div class="about-us">
-
-                    <p class="heading">About</p>
-                    <p class="subtitle">Calendar app is designed to help people allow people to keep track
-                         with their schedules and be updated on their daily tasks.<br><br></h1>
-                    <p>We are first-year CST students driven to help others be organized. 
-                        We have considered many factors of a student's daily life to incorporate 
-                        into this project. <br><br>
-                
-                    </p>
-                </div>
-                
-        </section>
- 
-            <section class="features-sect" id="features">
-                    <div class="image-div">
-                            <img class="landing-image" src="images/calen.jpg"/>
-                        </div>
-                <div class="features">
-                <p class="heading"> Core Features</h1>
-                  <p >Our mission is to help you with time management.</p>
-                  <div class="feature-img-div"></div>
-                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
-                </div>
-                  <p>You can upload your course information and access it anytime.</p>
-                  <div class="feature-img-div">
-                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
-                </div>
-                  <p>Set up notifications with us and we will let you know when there is a due coming up.</p>
-                  <div class="feature-img-div">
-                    <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff"/>
-                </div>
-                  <br>
-                  <br>
-                  </div>
-              </section>
+    <div class="card">
+        <div class="card-body">
+            </br><br>
+            <img class="card-image"
+                src="https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/75553072_1339801336143793_1941649131340562432_n.jpg?_nc_cat=100&_nc_oc=AQl-nzVz9Lou1P8DWjWRe5q7WcHinSRm8mglQQgvfBGgLl4hNrkEe--Lguj1at_kIFo&_nc_ht=scontent-sea1-1.xx&oh=724743498b429db5b6f2edccf4660d93&oe=5E52723A"
+                width="150" height="150" />
+            <h4 class="card-title"><br>Calendagenda</h4>
+            <h6 class="card-subtitle mb-2 text-muted">Get organized! Build better habits</h6>
+            <button type="button" class="btn btn-primary" onclick="location.href = 'loginpage.html';">Login</button>
+            <button type="button" class="btn btn-outline-primary"
+                onclick="location.href = 'loginpage.html';">Signup</button>
+        </div>
 
 
-
-              <section class="contact-sect" id="contact">
-                    <div class="image-div">
-                            
-                        </div>
-                <div class="contact">
-                <p class="heading"></p> Contact us!</h1>
-                <img  src="images/social-media.png" style="width:50; height:30px">
-                  <br>
-                  </div>
-              </section>
+    </div>
+    <a class="ct-btn-scroll ct-js-btn-scroll" href="#about"><img alt="Arrow Down Icon"
+            src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
 
 
-  
+    <section class="about" id="about">
+        <div class="image-div">
+            <img class="landing-image" src="images/office.jpg" />
+        </div>
+        <div class="about-us">
+
+            <p class="heading">About</p>
+            <p class="subtitle">Calendar app is designed to help people allow people to keep track
+                with their schedules and be updated on their daily tasks.<br><br></h1>
+                <p>We are first-year CST students driven to help others be organized.
+                    We have considered many factors of a student's daily life to incorporate
+                    into this project. <br><br>
+
+                </p>
+        </div>
+
+    </section>
+
+    <section class="features-sect" id="features">
+        <div class="image-div">
+            <img class="landing-image" src="images/calen.jpg" />
+        </div>
+        <div class="features">
+            <p class="heading"> Core Features</h1>
+                <p>Our mission is to help you with time management.</p>
+                <div class="feature-img-div"></div>
+                <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
+        </div>
+        <p>You can upload your course information and access it anytime.</p>
+        <div class="feature-img-div">
+            <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
+        </div>
+        <p>Set up notifications with us and we will let you know when there is a due coming up.</p>
+        <div class="feature-img-div">
+            <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
+        </div>
+        <br>
+        <br>
+        </div>
+    </section>
+
+
+
+    <section class="contact-sect" id="contact">
+        <div class="image-div">
+
+        </div>
+        <div class="contact">
+            <p class="heading"></p> Contact us!</h1>
+            <img src="images/social-media.png" style="width:50; height:30px">
+            <br>
+        </div>
+    </section>
+    <script>
+        //scrolling anchor button to see more
+        $(document).ready(function () {
+            $("a").on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function () {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+        });
+    </script>
+
+
 </body>
-</html>
- 
- 
- 
- 
 
+</html>
