@@ -1,0 +1,169 @@
+
+        .card {
+
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            top: 10vh;
+            align-self: center;
+            margin: 0 auto;
+            float: none;
+            margin-bottom: 300px;
+        }
+
+        .btn-primary {
+            position: absolute;
+            left: 70px;
+            margin: 2vh;
+            background-color: #6FC2AA;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: #6FC2AA;
+            display: block;
+            padding-left: 35px;
+            padding-right: 35px;
+
+        }
+
+        .btn-outline-primary {
+            position: absolute;
+            left: 70px;
+            bottom: 60px;
+            margin: 2vh;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: 1px solid gray;
+            color: gray;
+            display: block;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+
+        .about-us,
+        .p.about-us,.task, .contact {
+            color: gray;
+            text-align: left;
+            padding: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            background-color: white;
+            border-left: 10px solid  #6FC2AA;
+            margin: 15px;
+            margin-bottom: 35px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .task{
+            text-align: center;
+        }
+
+
+        .feature-image{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .feature-heading, .heading {
+            font-size: 22pt;
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 18pt;
+            color: gray;
+        }
+
+        .ct-btn-scroll {
+            width: 45px;
+            height: 29px;
+            position: absolute;
+            bottom: 120px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: orange;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        #myBtn:hover {
+            background-color: #555;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+          }
+          
+          input[type=submit] {
+            background-color:#6FC2AA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          input[type=submit]:hover {
+            background-color:#6FC2AA;
+          }
+          
+
+          .contact{
+              text-align: left;
+          }
+        #sticky-footer {
+            flex-shrink: none;
+          }
+
+          @media (max-width: 450px) {
+            .card{
+                width: 300px;
+                height:480px;
+                text-align: center;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                top: 2vh;
+                align-self: center;
+                margin: 0 auto;
+                float: none;
+                margin-bottom: 350px;
+            
+            }
+        .ct-btn-scroll {
+            width: 49px;
+            height: 29px;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+                
+            
+              
+            
