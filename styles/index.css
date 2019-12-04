@@ -1,6 +1,3 @@
-   body {
-            background-image: url(http://www.photos-public-domain.com/wp-content/uploads/2011/09/aqua-colored-fur-texture.jpg);
-        }
 
         .card {
 
@@ -8,12 +5,12 @@
             height: 500px;
             text-align: center;
             background-color: white;
-            box-shadow: 5px 10px 8px #888888;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             top: 10vh;
             align-self: center;
             margin: 0 auto;
             float: none;
-            margin-bottom: 375px;
+            margin-bottom: 300px;
         }
 
         .btn-primary {
@@ -21,6 +18,7 @@
             left: 70px;
             margin: 2vh;
             background-color: #6FC2AA;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border: #6FC2AA;
             display: block;
             padding-left: 35px;
@@ -33,6 +31,7 @@
             left: 70px;
             bottom: 60px;
             margin: 2vh;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             border: 1px solid gray;
             color: gray;
             display: block;
@@ -40,33 +39,37 @@
             padding-right: 30px;
         }
 
+
         .about-us,
-        p.about-us,
-        .contact-us {
+        .p.about-us,.task, .contact {
             color: gray;
-            text-align: center;
-            margin: 4%;
-            margin-bottom: 60px;
-            border: 1px solid white;
-            border-radius: 5%;
+            text-align: left;
             padding: 15px;
-            padding-left: 0;
-            padding-right: 0;
+            padding-left: 15px;
+            padding-right: 15px;
             background-color: white;
-
+            border-left: 10px solid  #6FC2AA;
+            margin: 15px;
+            margin-bottom: 35px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
-        .landing-image {
-            height: 35%;
-            width: 100%;
-            border-radius: 2%;
-
-
+        .task{
+            text-align: center;
         }
 
-        .heading {
+
+        .feature-image{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .feature-heading, .heading {
             font-size: 22pt;
-            color: gray
+            font-weight: bold;
+            padding-top: 5px;
+            padding-bottom: 5px;
         }
 
         .subtitle {
@@ -75,10 +78,10 @@
         }
 
         .ct-btn-scroll {
-            width: 49px;
+            width: 45px;
             height: 29px;
             position: absolute;
-            bottom: 70px;
+            bottom: 120px;
             left: 0;
             right: 0;
             margin: auto;
@@ -92,7 +95,7 @@
             z-index: 99;
             border: none;
             outline: none;
-            background-color: red;
+            background-color: orange;
             color: white;
             cursor: pointer;
             padding: 15px;
@@ -103,3 +106,64 @@
         #myBtn:hover {
             background-color: #555;
         }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+          }
+          
+          input[type=submit] {
+            background-color:#6FC2AA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+
+          input[type=submit]:hover {
+            background-color:#6FC2AA;
+          }
+          
+
+          .contact{
+              text-align: left;
+          }
+        #sticky-footer {
+            flex-shrink: none;
+          }
+
+          @media (max-width: 450px) {
+            .card{
+                width: 300px;
+                height:480px;
+                text-align: center;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                top: 2vh;
+                align-self: center;
+                margin: 0 auto;
+                float: none;
+                margin-bottom: 350px;
+            
+            }
+        .ct-btn-scroll {
+            width: 49px;
+            height: 29px;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+                
+            
+              
+            

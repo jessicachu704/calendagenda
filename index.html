@@ -17,9 +17,10 @@
 
     <!-- Optional styles and scripts of your own -->
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="icon" href="images/logo.jpg">
 </head>
 
-<body background="images/aquafur.jpg">
+<body background="images/tealpink.jpg">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
             data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -32,17 +33,14 @@
                 width="50" height="50" /></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#scroll-down">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about">Features</a>
-                </li>
+                        <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#features">Features</a>
+                    </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#features">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact Us</a>
+                    <a class="nav-link"  data-toggle="collapse" data-target=".navbar-collapse"href="#contact">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -62,18 +60,17 @@
 
 
     </div>
-    <a class="ct-btn-scroll ct-js-btn-scroll" href="#about"><img alt="Arrow Down Icon"
-            src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
+    <a class="ct-btn-scroll ct-js-btn-scroll" id="scroll-down" href="#about"><img alt="Arrow Down Icon"
+            src="images/arrow-down.png"></a>
 
 
     <section class="about" id="about">
         <div class="image-div">
-            <img class="landing-image" src="images/office.jpg" />
         </div>
         <div class="about-us">
 
             <p class="heading">About</p>
-            <p class="subtitle">Calendar app is designed to help people allow people to keep track
+            <p class="subtitle" >Calendar app is designed to help people allow people to keep track
                 with their schedules and be updated on their daily tasks.<br><br></h1>
                 <p>We are first-year CST students driven to help others be organized.
                     We have considered many factors of a student's daily life to incorporate
@@ -88,40 +85,95 @@
 
     <section class="features-sect" id="features">
         <div class="image-div">
-            <img class="landing-image" src="images/calen.jpg" />
         </div>
         <div class="features">
             <p class="heading"> Core Features</h1>
-                <p>Our mission is to help you with time management.</p>
-                <div class="feature-img-div"></div>
-                <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
-        </div>
-        <p>You can upload your course information and access it anytime.</p>
-        <div class="feature-img-div">
-            <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
-        </div>
-        <p>Set up notifications with us and we will let you know when there is a due coming up.</p>
-        <div class="feature-img-div">
-            <img class="feature-image" src="https://dummyimage.com/400x400/e09f26/ff" />
-        </div>
-        <br>
-        <br>
+
+                <div class="task">
+                    <div class="image">
+
+                    </div>
+                    <div class="feature-img-div">
+                        <img class="feature-image" src="images/grade.png" />
+                    </div>
+                    <div class="feature-heading">
+                        Stay on track
+                    </div>
+
+                    <div class="feature-description">
+                        Tracking your grade will ensure independence and progress.
+                    </div>
+
+                </div>
+
+
+                <div class="task">
+                    <div class="image">
+
+                    </div>
+                    <div class="feature-img-div">
+                        <img class="feature-image" src="images/file.png" />
+                    </div>
+                    <div class="feature-heading">
+                        Be informed
+                    </div>
+
+                    <div class="feature-description">
+                        Convenient location for you to look up course and instructor information.
+                    </div>
+
+                </div>
+
+
+                <div class="task">
+                    <div class="image">
+
+                    </div>
+                    <div class="feature-img-div">
+                        <img class="feature-image" src="images/calendar.png" />
+                    </div>
+                    <div class="feature-heading">
+                        Calendar Overview
+                    </div>
+
+                    <div class="feature-description">
+                        Be aware of class schedule through the calendar feature, showing when the due dates are.
+                    </div>
+
+                </div>
+                <br>
+                <br>
         </div>
     </section>
-
-
-
-    <section class="contact-sect" id="contact">
-        <div class="image-div">
-
-        </div>
-        <div class="contact">
-            <p class="heading"></p> Contact us!</h1>
-            <img src="images/social-media.png" style="width:50; height:30px">
-            <br>
-        </div>
-    </section>
+    <section class="contact" id="contact">
+            <h3>Contact us!</h3>
+            <form action="/action_page.php">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          
+              <label for="lname">Email</label>
+              <input type="text" id="email" name="email" placeholder="Your email..">
     
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
+    
+              <input type="submit" value="Submit">
+            </form>
+ 
+
+
+            <br>
+    
+    </section>
+
+
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+        <small>Copyright &copy; Group31 Set1B</small>
+        <img src="images/social-media.png" style="width:50; height:30px;">
+        </div>
+    </footer>
+
     <script src="scripts/index.js"></script>
 
 
