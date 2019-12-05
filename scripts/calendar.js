@@ -1,3 +1,24 @@
+$(document).ready(function () {
+  updateUsername();
+  updateDate();
+  //Signs out user when sign out button is clicked.
+  $('#signOutButton').click(function (x) {
+      console.log("PRESSED SIGNOUT BUTTON");
+      signout();
+     location.href = "./loginpage.html";
+  });
+
+
+//Sends user to login page if not logged in.
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user == null){
+   
+      console.log("u cant see user is null :(");
+        location.href = "./loginpage.html";
+    }
+   });
+});
+
 let today = new Date();
 let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
@@ -43,7 +64,7 @@ function createList(course, type) {
         dueDateList.push(dueDateObject);
       }
       showCalendar(currentMonth, currentYear);
-      //  console.log("LIST:" + dueDateList);
+    
     });
 }
 
