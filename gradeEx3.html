@@ -1,0 +1,208 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calendagenda :: Grades</title>
+
+    <!-- Bootstrap for Mobile-first -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Optional styles and scripts of your own -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js"></script>
+    <script src="scripts/firebase_config.js"></script>
+    <script>
+        $(document).ready(function () {
+            console.log("early");
+            showQuizMarks();
+            getAverage("1510", "quizzes");
+
+
+
+        });
+
+        function showQuizMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                    .orderBy("name")
+                    .get().then(function (snap) {
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("quiz" + counter).value = mark;
+                            counter++;
+                        })
+                    });
+            })
+        }
+
+        function getAverage(course, type) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
+                    .collection(type);
+                let sum = 0;
+                let totalQuiz = 0.0;
+                dbRef.onSnapshot(function (snap) {
+                    //Checks each document in the collection(QUIZZES)
+                    snap.forEach(function (doc) {
+                        var mark = Number(doc.data().mark);
+                        console.log(doc.data().name + " ", mark);
+                        sum += mark;
+
+                        totalQuiz++
+                        
+
+                    });
+
+                    console.log("sum of marks ", sum);
+                    let average = sum / totalQuiz;
+                    console.log("AVERAGE ", average);
+                    document.getElementById("averageQuizzes").innerHTML = average;
+
+                });
+
+            });
+        }
+    </script>
+
+    <style>
+        .grade {
+            text-align: right;
+        }
+
+        .grade-box {
+            text-align: right;
+            position: relative;
+            top: -20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="comp1510">
+        <form>
+            Quizzes<br>
+            <div class="mark">
+                Quiz 1
+                <div class="grade-box">
+                    <input type="number" id="quiz1" class="grade" min="0" max="5" name="grade" placeholder="No grade">/5
+                </div>
+                <br>
+            </div>
+            <div class="mark">
+                Quiz 2
+                <div class="grade-box">
+                    <input type="number" id="quiz2" class="grade" min="0" max="5" name="grade" placeholder="No grade">/5
+                </div>
+                <br>
+            </div>
+            <div class="mark">
+                Quiz 3
+                <div class="grade-box">
+                    <input type="number" id="quiz3" class="grade" min="0" max="5" name="grade" placeholder="No grade">/5
+                </div>
+                <br>
+            </div>
+            <div class="mark">
+                Quiz 4
+                <div class="grade-box">
+                    <input type="number" id="quiz4" class="grade" min="0" max="5" name="grade" placeholder="No grade">/5
+                </div>
+                <br>
+            </div>
+            <div class="mark">
+                Quiz 5
+                <div class="grade-box">
+                    <input type="number" id="quiz5" class="grade" min="0" max="5" name="grade" placeholder="No grade">/5
+                </div>
+                <br>
+            </div>
+            <input type="submit" id="submit" value="Submit">
+            <br>
+            Grade<div id="averageQuizzes">0</div>
+        </form>
+
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+         
+        update();
+
+            $('#submit').click(function (x) {
+                console.log("PRESSED submit button");
+
+           
+            });
+        });
+
+
+
+
+
+        function update() {
+            //input marks into the value, and into the database
+       
+            //update the average grade
+   //         getAverage();
+
+        }
+
+        updateGradeBook(course,type){
+
+        }
+
+        
+        //submit button does this stuff: 
+        setAddListener();
+        getAverage("1510", "quizzes");
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setAddListener() {
+            document.getElementById("submit").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1510";
+                let type = "quizzes";
+                let quiznum = document.getElementById("experience").value;
+                let grade = document.getElementById("message-text").value;
+                console.log("PRESSED! " + quiznum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: quiznum,
+                            mark: grade
+                        })
+                });
+
+            });
+        }
+ 
+
+
+        
+       
+    </script>
+
+
+</body>
+
+</html>

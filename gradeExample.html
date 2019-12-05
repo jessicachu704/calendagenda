@@ -72,55 +72,11 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <a class="navbar-brand" href="#!">Calendagenda</a>
-
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="calendar.html">Calendar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="grades.html">Grades</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="officehours.html">Office Hours</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="courseinformation.html">Course Information</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="loginpage.html" onclick="logoutUser()" id="logout">Log out</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
 
 
 
-    <div class="content">
 
-        <p>Pick the Course</p>
-        <h1>Grades <br><br></h1>
 
-        <div class="selection">
-            <a href="#comp-1510" class="btn btn-outline-secondary">COMP 1510</a>
-            <a href="#comp-1712" class="btn btn-outline-secondary">COMP 1712</a>
-            <a href="#comp-1536" class="btn btn-outline-secondary">COMP 1536</a>
-            <a href="#comp-1930" class="btn btn-outline-secondary">COMP 1930</a>
-            <a href="#comp-1100" class="btn btn-outline-secondary">COMP 1100</a>
-            <a href="#comp-1113" class="btn btn-outline-secondary">COMP 1113</a>
-            <a href="#comm-1116" class="btn btn-outline-secondary">COMM 1116</a>
-
-        </div>
 
         <div class="card-deck">
             <div id="comp-1510" class="card">
@@ -130,11 +86,9 @@
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
                         data-whatever="quiz">Submit Quiz Marks</button>
                     <br>
-                    <p class="card-text">Quiz 1: <span id="quiz1">test1</span></p>
-                    <p class="card-text">Quiz 2: <span id="quiz2">test2</span></p>
-                    <p class="card-text">Quiz 3: <span id="quiz3">test3</span></p>
-                    <p class="card-text">Quiz 4: <span id="quiz4">test4</span></p>
-                    <p class="card-text">Quiz 5: <span id="quiz5">test5</span></p>
+                    <p class="card-text">Quiz 1: <span id="quiz1">test1</span>/10</p>
+                    <p class="card-text">Quiz 2: <span id="quiz2">test2</span>/10</p>
+                    <p class="card-text">Quiz 3: <span id="quiz3">test3</span>/10</p>
                     <p class="card-text">Average of the quizzes: <span id="averageQuizzes">Average</span></p>
 
 
@@ -157,8 +111,6 @@
                                                 <option value="Quiz 1" selected="selected">Quiz 1</option>
                                                 <option value="Quiz 2">Quiz 2</option>
                                                 <option value="Quiz 3">Quiz 3</option>
-                                                <option value="Quiz 4">Quiz 4</option>
-                                                <option value="Quiz 5">Quiz 5</option>
 
                                             </select>
                                         </div>
@@ -170,8 +122,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="submit" class="btn btn-primary" data-dismiss="modal"
-                                        onClick="refresh">Submit Grade</button>
+                                    <button type="button" id="submit" class="btn btn-primary" data-dismiss="modal">Submit Grade</button>
                                 </div>
                             </div>
                         </div>
@@ -222,10 +173,11 @@
 
         function showQuizMarks() {
             firebase.auth().onAuthStateChanged(function (user) {
-                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes").orderBy("name")
                     .get().then(function (snap) {
                         var counter = 1;
                         snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
                             var mark = doc.data().mark;
                             document.getElementById("quiz" + counter).innerHTML = mark;
                             counter++;
