@@ -1,0 +1,47 @@
+ /* body {
+      background-image: url(images/tealpink.jpg);
+    } */
+
+    .content {
+      text-align: center;
+      margin: 5vh;
+
+    }
+
+    .card {
+      margin: 1.5vh;
+      height: 350px;
+      width: 95%;
+      margin-top: 50px;
+
+    }
+
+    /* .card-ex {
+      margin: 1.5vh;
+      height: 700px;
+      width: 95%;
+      margin-top: 50px;
+
+    } */
+
+    .card-deck {
+      display: block;
+
+
+    }
+
+    .btn-outline-secondary {
+      width: 100%;
+      margin: 1.5vh;
+      background : #6FC2AA;
+      color: white;
+
+    }
+
+    .selection {
+      border: 1px solid gray;
+      padding: 1.5vh;
+      padding-right: 30px;
+      border-radius: 3%;
+      background: white;
+    }
