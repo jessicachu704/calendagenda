@@ -1,12 +1,16 @@
-//submit button does this stuff: 
+
 setComp1510QuizAddListener();
 getComp1510QuizAverage("1510", "quizzes");
+showComp1510QuizMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//-----------------------------------------------
+// Creating an event when the user submits their
+// COMP 1510 quiz and puts data into firebase.
+//-----------------------------------------------
 function setComp1510QuizAddListener() {
     document.getElementById("submit").addEventListener("click", function (e) {
-        //Variables for different types of course and assessments
+
+        //Variables for course and the criteria
         let course = "1510";
         let type = "quizzes";
         let quiznum = document.getElementById("experience").value;
@@ -27,9 +31,10 @@ function setComp1510QuizAddListener() {
     });
 }
 
-
-showComp1510QuizMarks();
-
+//--------------------------------------------
+// Displays the comp 1510 quiz mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1510QuizMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
@@ -50,14 +55,20 @@ function showComp1510QuizMarks() {
     })
 }
 
+//----------------------------------------------
+// Getting the total data of the comp 1510
+// quiz and calculating the average for display
+//----------------------------------------------
 function getComp1510QuizAverage(course, type) {
+    let sum = 0;
+    let totalQuiz = 0.0;
     firebase.auth().onAuthStateChanged(function (user) {
         var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
             .collection(type);
-        let sum = 0;
-        let totalQuiz = 0.0;
+        
+        
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(QUIZZES)
+            //Checks each document in the collection
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -68,25 +79,30 @@ function getComp1510QuizAverage(course, type) {
             });
 
             console.log("sum of marks ", sum);
+            console.log("total of quizzes", totalQuiz);
             let average = sum / totalQuiz;
             console.log("AVERAGE ", average);
             document.getElementById("comp1510AverageQuizzes").innerHTML = average.toFixed(2) +
                 "/5";
-
+            sum = 0;
+            totalQuiz = 0;
         });
 
     });
 }
 
-//submit button does this stuff: 
 setComp1510LabAddListener();
 getComp1510LabAverage("1510", "labs");
+showComp1510LabMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//-----------------------------------------------
+// Creating an event when the user submits their
+// comp 1510 lab and puts data into firebase.
+//-----------------------------------------------
 function setComp1510LabAddListener() {
     document.getElementById("submit1").addEventListener("click", function (e) {
-        //Variables for different types of course and assessments
+
+        //Variables for course and criteria
         let course = "1510";
         let type = "labs";
         let labnum = document.getElementById("experience1").value;
@@ -108,8 +124,10 @@ function setComp1510LabAddListener() {
 }
 
 
-showComp1510LabMarks();
-
+//--------------------------------------------
+// Displays the comp 1510 lab mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1510LabMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("labs")
@@ -130,6 +148,10 @@ function showComp1510LabMarks() {
     })
 }
 
+//----------------------------------------------
+// Getting the total data of the comp 1510
+// lab and calculating the average for display
+//----------------------------------------------
 function getComp1510LabAverage(course, type) {
     firebase.auth().onAuthStateChanged(function (user) {
         var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
@@ -137,7 +159,7 @@ function getComp1510LabAverage(course, type) {
         let sum = 0;
         let totalLab = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(Lab)
+            //Checks each document in the collection
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -153,19 +175,26 @@ function getComp1510LabAverage(course, type) {
             document.getElementById("comp1510AverageLabs").innerHTML = average.toFixed(2) +
                 "/5";
 
+            sum = 0;
+            totalLab = 0;
+
         });
 
     });
 }
 
-//submit button does this stuff: 
+
 setComp1510AssignmentAddListener();
 getComp1510AssignmentAverage("1510", "assignments");
+showComp1510AssignmentMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//---------------------------------------------------
+// Creating an event when the user submits their
+// comp 1510 assignment and puts data into firebase.
+//---------------------------------------------------
 function setComp1510AssignmentAddListener() {
     document.getElementById("submit2").addEventListener("click", function (e) {
+
         //Variables for different types of course and assessments
         let course = "1510";
         let type = "assignments";
@@ -187,9 +216,10 @@ function setComp1510AssignmentAddListener() {
     });
 }
 
-
-showComp1510AssignmentMarks();
-
+//--------------------------------------------
+// Displays the comp 1510 assignment mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1510AssignmentMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("assignments")
@@ -211,6 +241,10 @@ function showComp1510AssignmentMarks() {
     })
 }
 
+//----------------------------------------------
+// Getting the total data of the comp 1510
+// assignment and calculating the average for display
+//----------------------------------------------
 function getComp1510AssignmentAverage(course, type) {
     firebase.auth().onAuthStateChanged(function (user) {
         var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
@@ -218,7 +252,7 @@ function getComp1510AssignmentAverage(course, type) {
         let sum = 0;
         let totalAssignments = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(LABS)
+            //Checks each document in the collection
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -234,17 +268,22 @@ function getComp1510AssignmentAverage(course, type) {
             document.getElementById("comp1510AverageAssignments").innerHTML = average.toFixed(
                 2) + "/5";
 
+            sum = 0;
+            totalAssignments = 0;
+
         });
 
     });
 }
 
-//submit button does this stuff: 
+
 setComp1510MidtermAddListener();
 showComp1510MidtermMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//---------------------------------------------------
+// Creating an event when the user submits their
+// comp 1510 midterm and puts data into firebase.
+//---------------------------------------------------
 function setComp1510MidtermAddListener() {
     document.getElementById("submit3").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -268,9 +307,10 @@ function setComp1510MidtermAddListener() {
     });
 }
 
-
-
-
+//--------------------------------------------
+// Displays the comp 1510 midterm mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1510MidtermMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("midterm")
@@ -291,12 +331,14 @@ function showComp1510MidtermMarks() {
     })
 }
 
-//submit button does this stuff: 
+
 setComp1510FinalAddListener();
 showComp1510FinalMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//---------------------------------------------------
+// Creating an event when the user submits their
+// comp 1510 final and puts data into firebase.
+//---------------------------------------------------
 function setComp1510FinalAddListener() {
     document.getElementById("submit4").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -321,8 +363,10 @@ function setComp1510FinalAddListener() {
 }
 
 
-
-
+//--------------------------------------------
+// Displays the comp 1510 final mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1510FinalMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("final")
@@ -343,12 +387,16 @@ function showComp1510FinalMarks() {
     })
 }
 
-//submit button does this stuff: 
+
 setComp1712LabAddListener();
 getComp1712LabAverage("1712", "labs");
+showComp1712LabMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+
+//-----------------------------------------------
+// Creating an event when the user submits their
+// comp 1712 lab and puts data into firebase.
+//-----------------------------------------------
 function setComp1712LabAddListener() {
     document.getElementById("submit5").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -372,9 +420,10 @@ function setComp1712LabAddListener() {
     });
 }
 
-
-showComp1712LabMarks();
-
+//--------------------------------------------
+// Displays the comp 1712 lab mark by 
+// retriving from the firebase we have stored
+//--------------------------------------------
 function showComp1712LabMarks() {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("users").doc(user.uid).collection("grades").doc("1712").collection("labs")
@@ -395,6 +444,11 @@ function showComp1712LabMarks() {
     })
 }
 
+
+//----------------------------------------------
+// Getting the total data of the comp 1712
+// lab and calculating the average for display
+//----------------------------------------------
 function getComp1712LabAverage(course, type) {
     firebase.auth().onAuthStateChanged(function (user) {
         var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
@@ -408,6 +462,8 @@ function getComp1712LabAverage(course, type) {
                 console.log(doc.data().name + " ", mark);
                 sum += mark;
 
+                console.log("sum of marks", sum);
+
                 totalLab++
 
             });
@@ -417,6 +473,9 @@ function getComp1712LabAverage(course, type) {
             console.log("AVERAGE ", average);
             document.getElementById("comp1712AverageLabs").innerHTML = average.toFixed(2) +
                 "/10";
+            
+            sum = 0;
+            totalLab = 0;
 
         });
 
@@ -427,8 +486,8 @@ function getComp1712LabAverage(course, type) {
 setComp1712AssignmentAddListener();
 getComp1712AssignmentAverage("1712", "assignments");
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds assignment and its grade into the database 
+//DOESNT UPDATE grade / duplicate assignment
 function setComp1712AssignmentAddListener() {
     document.getElementById("submit6").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -483,7 +542,7 @@ function getComp1712AssignmentAverage(course, type) {
         let sum = 0;
         let totalAssignments = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(Lab)
+            //Checks each document in the collection
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -499,6 +558,9 @@ function getComp1712AssignmentAverage(course, type) {
             document.getElementById("comp1712AverageAssignments").innerHTML = average.toFixed(
                     2) +
                 "/10";
+            
+            sum = 0;
+            totalAssignments = 0;
 
         });
 
@@ -509,8 +571,7 @@ function getComp1712AssignmentAverage(course, type) {
 setComp1712MidtermAddListener();
 showComp1712MidtermMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds midterm and its grade into the database 
 function setComp1712MidtermAddListener() {
     document.getElementById("submit7").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -561,8 +622,7 @@ function showComp1712MidtermMarks() {
 setComp1712FinalAddListener();
 showComp1712FinalMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds final and its grade into the database 
 function setComp1712FinalAddListener() {
     document.getElementById("submit8").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -668,7 +728,7 @@ function getComp1536QuizAverage(course, type) {
         let sum = 0;
         let totalQuiz = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(QUIZZES)
+            //Checks each document in the collection
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -684,6 +744,8 @@ function getComp1536QuizAverage(course, type) {
             document.getElementById("comp1536AverageQuizzes").innerHTML = average.toFixed(2) +
                 "/5";
 
+            sum = 0;
+            totalQuiz = 0;
         });
 
     });
@@ -693,8 +755,8 @@ function getComp1536QuizAverage(course, type) {
 setComp1536LabAddListener();
 getComp1536LabAverage("1536", "labs");
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds lab and its grade into the database 
+//DOESNT UPDATE grade / duplicate lab
 function setComp1536LabAddListener() {
     document.getElementById("submit10").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -764,6 +826,8 @@ function getComp1536LabAverage(course, type) {
             document.getElementById("comp1536AverageLabs").innerHTML = average.toFixed(2) +
                 "/5";
 
+            sum = 0;
+            totalLab = 0;
         });
 
     });
@@ -773,8 +837,8 @@ function getComp1536LabAverage(course, type) {
 setComp1536MidtermAddListener();
 showComp1536MidtermMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds midterm and its grade into the database 
+//DOESNT UPDATE grade / duplicate midterm
 function setComp1536MidtermAddListener() {
     document.getElementById("submit11").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -825,8 +889,8 @@ function showComp1536MidtermMarks() {
 setComp1536FinalAddListener();
 showComp1536FinalMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds final and its grade into the database 
+//DOESNT UPDATE grade / duplicate final
 function setComp1536FinalAddListener() {
     document.getElementById("submit12").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -948,6 +1012,9 @@ function getComp1930QuizAverage(course, type) {
             document.getElementById("comp1930AverageQuizzes").innerHTML = average.toFixed(2) +
                 "/3";
 
+            sum = 0;
+            totalQuiz = 0;
+
         });
 
     });
@@ -959,8 +1026,8 @@ function getComp1930QuizAverage(course, type) {
 setComp1930IndividualAssignmentAddListener();
 getComp1930IndividualAssignmentAverage("1930", "individual assignments");
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds assignment and its grade into the database 
+//DOESNT UPDATE grade / duplicate assignment
 function setComp1930IndividualAssignmentAddListener() {
     document.getElementById("submit14").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1017,7 +1084,7 @@ function getComp1930IndividualAssignmentAverage(course, type) {
         let sum = 0;
         let totalAssignments = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(LABS)
+            //Checks each document in the collection assignment
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -1034,6 +1101,9 @@ function getComp1930IndividualAssignmentAverage(course, type) {
                 .toFixed(
                     2) + "/10";
 
+            sum = 0;
+            totalAssignments = 0;
+
         });
 
     });
@@ -1043,8 +1113,8 @@ function getComp1930IndividualAssignmentAverage(course, type) {
 setComp1930GroupAssignmentAddListener();
 getComp1930GroupAssignmentAverage("1930", "group assignments");
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds assignment and its grade into the database 
+//DOESNT UPDATE grade / duplicate assignment
 function setComp1930GroupAssignmentAddListener() {
     document.getElementById("submit15").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1100,7 +1170,7 @@ function getComp1930GroupAssignmentAverage(course, type) {
         let sum = 0;
         let totalAssignments = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(LABS)
+            //Checks each document in the collection assignment
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -1116,6 +1186,9 @@ function getComp1930GroupAssignmentAverage(course, type) {
             document.getElementById("comp1930AverageGroupAssignment").innerHTML = average
                 .toFixed(
                     2) + "/10";
+            
+            sum = 0;
+            totalAssignments = 0;
 
         });
 
@@ -1126,8 +1199,8 @@ function getComp1930GroupAssignmentAverage(course, type) {
 setComp1930GroupPresentationAddListener();
 getComp1930GroupPresentationAverage("1930", "group presentations");
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds presentation and its grade into the database 
+//DOESNT UPDATE grade / duplicate presentation
 function setComp1930GroupPresentationAddListener() {
     document.getElementById("submit16").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1183,7 +1256,7 @@ function getComp1930GroupPresentationAverage(course, type) {
         let sum = 0;
         let totalPresentations = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(LABS)
+            //Checks each document in the collection presentation
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -1198,6 +1271,9 @@ function getComp1930GroupPresentationAverage(course, type) {
             console.log("AVERAGE ", average);
             document.getElementById("comp1930AveragePresentations").innerHTML = average.toFixed(
                 2) + "/10";
+            
+            sum = 0;
+            totalPresentations = 0;
 
         });
 
@@ -1208,7 +1284,7 @@ function getComp1930GroupPresentationAverage(course, type) {
 setComp1930FinalProjectAddListener();
 showComp1930FinalProjectMarks();
 
-//Adds quiz and its grade into the database 
+//Adds project and its grade into the database 
 //DOESNT UPDATE grade / duplicate quizzes
 function setComp1930FinalProjectAddListener() {
     document.getElementById("submit17").addEventListener("click", function (e) {
@@ -1331,6 +1407,9 @@ function getComp1113QuizAverage(course, type) {
             console.log("AVERAGE ", average);
             document.getElementById("comp1113AverageQuizzes").innerHTML = average.toFixed(2) +
                 "/5";
+            
+            sum = 0;
+            totalQuiz = 0;
 
         });
 
@@ -1341,7 +1420,7 @@ function getComp1113QuizAverage(course, type) {
 setComp1113AssignmentAddListener();
 getComp1113AssignmentAverage("1113", "assignments");
 
-//Adds quiz and its grade into the database 
+//Adds assignment and its grade into the database 
 //DOESNT UPDATE grade / duplicate quizzes
 function setComp1113AssignmentAddListener() {
     document.getElementById("submit19").addEventListener("click", function (e) {
@@ -1398,7 +1477,7 @@ function getComp1113AssignmentAverage(course, type) {
         let sum = 0;
         let totalAssignments = 0.0;
         dbRef.onSnapshot(function (snap) {
-            //Checks each document in the collection(LABS)
+            //Checks each document in the collection(assignment)
             snap.forEach(function (doc) {
                 var mark = Number(doc.data().mark);
                 console.log(doc.data().name + " ", mark);
@@ -1414,6 +1493,9 @@ function getComp1113AssignmentAverage(course, type) {
             document.getElementById("comp1113AssignmentAverage").innerHTML = average.toFixed(
                 2) + "/28";
 
+            sum = 0;
+            totalAssignments = 0;
+
         });
 
     });
@@ -1423,8 +1505,8 @@ function getComp1113AssignmentAverage(course, type) {
 setComp1113MidtermAddListener();
 showComp1113MidtermMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds midterm and its grade into the database 
+//DOESNT UPDATE grade / duplicate midterm
 function setComp1113MidtermAddListener() {
     document.getElementById("submit20").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1527,11 +1609,11 @@ function showComp1113FinalMarks() {
 setComm1116LetterAddListener();
 showComm1116LetterMarks();
 
-//Adds quiz and its grade into the database 
+//Adds letter and its grade into the database 
 //DOESNT UPDATE grade / duplicate quizzes
 function setComm1116LetterAddListener() {
     document.getElementById("submit22").addEventListener("click", function (e) {
-        //Variables for different types of course and assessments
+        //Variables for different types of course and letter
         let course = "1116";
         let type = "complaint letter";
         let letternum = document.getElementById("experience22").value;
@@ -1579,8 +1661,8 @@ function showComm1116LetterMarks() {
 setComm1116ReportAddListener();
 showComm1116ReportMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds report and its grade into the database 
+//DOESNT UPDATE grade / duplicate report
 function setComm1116ReportAddListener() {
     document.getElementById("submit23").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1631,8 +1713,8 @@ function showComm1116ReportMarks() {
 setComm1116MidtermAddListener();
 showComm1116MidtermMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds midterm and its grade into the database 
+//DOESNT UPDATE grade / duplicate midterm
 function setComm1116MidtermAddListener() {
     document.getElementById("submit24").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1683,8 +1765,8 @@ function showComm1116MidtermMarks() {
 setComm1116FinalAddListener();
 showComm1116FinalMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds final and its grade into the database 
+//DOESNT UPDATE grade / duplicate final
 function setComm1116FinalAddListener() {
     document.getElementById("submit25").addEventListener("click", function (e) {
         //Variables for different types of course and assessments
@@ -1735,8 +1817,8 @@ function showComm1116FinalMarks() {
 setComm1116PresentationAddListener();
 showComm1116PresentationMarks();
 
-//Adds quiz and its grade into the database 
-//DOESNT UPDATE grade / duplicate quizzes
+//Adds presentation and its grade into the database 
+//DOESNT UPDATE grade / duplicate presentation
 function setComm1116PresentationAddListener() {
     document.getElementById("submit26").addEventListener("click", function (e) {
         //Variables for different types of course and assessments

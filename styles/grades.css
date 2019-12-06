@@ -1,5 +1,5 @@
 body{
-    background-image: url("images/tealpink.jpg");
+        background-image: url("images/tealpink.jpg");
 }
 
 .content {
@@ -66,3 +66,7 @@ body{
     border-radius: 10px;
     font-size: 18px;
 }
+
+.card-header{
+    background-color : #6FC2AA;
+  }
