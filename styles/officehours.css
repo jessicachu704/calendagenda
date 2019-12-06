@@ -10,7 +10,7 @@
 
     .card {
       margin: 1.5vh;
-      height: 350px;
+      height: 520px;
       width: 95%;
       margin-top: 50px;
 
@@ -44,6 +44,11 @@
       padding: 15px;
       border-radius: 10px;
       font-size: 18px;
+  }
+
+  table, td, th {
+    border: 1px solid black;
+    font-size: 6pt;
   }
 
   #myBtn:hover {

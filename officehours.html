@@ -6,8 +6,11 @@
   <meta charset="utf-8">
   <title>Calendagenda :: Office Hours</title>
 
+
   <!-- Bootstrap for Mobile-first -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -33,28 +36,38 @@
 </head>
 
 <body >
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
         data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <a class="navbar-brand" href="#!"><img class="card-image" src="images/logo.jpg"width="50" height="50" /></a>
+
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#scroll-down">About</a>
-            </li>
-            <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" data-target=".navbar-collapse" href="#features">Features</a>
-                </li>
-            <li class="nav-item">
-                <a class="nav-link"  data-toggle="collapse" data-target=".navbar-collapse"href="#contact">Contact Us</a>
-            </li>
-        </ul>
+      <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item active">
+            <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="calendar.html">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="grades.html">Grades</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="officehours.html">Office Hours</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="courseinfomation.html">Course Information</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="signOutButton" >Log out</a>
+      </li>
+    </ul>
     </div>
 </nav>
+
 
   <div class="content">
 
@@ -79,6 +92,58 @@
           <p class="card-text"><span id=1510email>email</span></p>
           <p class="card-text">Location:<span id=1510room>room</span></p>
           <p class="card-text">Office hours M 1:30pm-3:20pm, T 4:00pm-5:30pm</p>
+          <div class="card-body">
+            <div style="overflow-x:auto;">
+                <table cellpadding = "8">
+                    <thead >
+                        <tr>
+                            <th>#</th>
+                            <th>Criteria</th>
+                            <th>Percentage</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Quizzes</td>
+                            <td>10%</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lab Assignments</td>
+                            <td>10%</td>
+                            <td>12</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Assignments</td>
+                            <td>20%</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Midterm</td>
+                            <td>20%</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Final</td>
+                            <td>35%</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Participation</td>
+                            <td>5%</td>
+                            <td>1</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
       </div>
     </div>
 
@@ -149,6 +214,7 @@
   </div>
 
   <script src="scripts/officehours.js">  </script>
+  <script src="scripts/signout.js"></script>
 </body>
 
 </html>
