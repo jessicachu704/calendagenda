@@ -79,6 +79,7 @@ function createList(course, type){
     db.collection("courses").doc(course).collection("assessments").doc(type)
     .onSnapshot(function(snap){
       let percent = snap.data().weight/snap.data().max;
+      console.log
 
       for(let i = 0; i < snap.data().duedates.length; i++ ){
         if(type == "assignments") type = "Assignment";
@@ -87,7 +88,7 @@ function createList(course, type){
         if(type == "lab") type = "Lab";
         if(type == "final") type = "Final";
         duedate =  snap.data().duedates[i];
-        dueDateObject = {course: course, type: type, percent: percent, date: duedate};
+        dueDateObject = {course: course, name:getCourseName(course), type: type, percent: percent, date: duedate};
         dueDateList.push(dueDateObject);
         
       }
@@ -107,25 +108,23 @@ function createEventList() {
 
   let eventList = document.createElement("div");
   eventList.classList.add("events__list");
- // let i = 3;
- // console.log("DUE DATE OBJECT " ,dueDateList);
+
   for (let i = 0; i < dueDateList.length; i++) {
- // let j = 7;
+
     for(let j = 0; j < currentWeek.length; j++){
     let due = dueDateList[i].date;
-   // let current = months[currentMonth] + " " + today.getDate()
+  
     let weekDate = currentWeek[j].date;
     let weekMonth = currentWeek[j].month;
     let weekListItem = months[weekMonth] + " " + weekDate;
     
 
     if(due == weekListItem){
-    //  console.log("due date list: ", due + " vs week list: ",  weekListItem  );
-    //  console.log("they match!!!!!!!!!!!!");
       let title = dueDateList[i].type;
       let course = dueDateList[i].course;
+      let name = dueDateList[i].name;
       let percent = dueDateList[i].percent.toFixed(2) + "%";
-      let time = "8PM";
+    
 
       let eventItem = document.createElement("div");
       eventItem.classList.add("events__item");
@@ -133,20 +132,20 @@ function createEventList() {
       eventItemLeft.classList.add("events__item--left");
       let eventName = document.createElement("span");
       eventName.classList.add("events__name");
-      eventName.innerHTML = course + " " + title;
+      eventName.innerHTML = course + ": " + name;
 
       getCourseColor(eventName, eventItem);
       let eventPercent = document.createElement("span");
-      //eventPercent.innerHTML = percent;
+      eventPercent.innerHTML =  title;
       eventPercent.classList.add("events__percent");
       let eventDate = document.createElement("span");
       eventDate.classList.add("events__tag2");
-      eventDate.innerHTML = percent;
+      eventDate.innerHTML = "Percentage worth: " + percent;
       let eventTag = document.createElement("span");
       eventTag.classList.add("events__tag1");
-      eventTag.innerHTML = dueDateList[i].date;
-      eventItemLeft.append(eventName, eventPercent, eventDate);
-      eventItem.append(eventItemLeft, eventTag);
+      eventTag.innerHTML = "Date due: " + dueDateList[i].date;
+      eventItemLeft.append(eventName, eventPercent);
+      eventItem.append(eventItemLeft, eventTag, eventDate);
       eventList.appendChild(eventItem);
     
     }
@@ -155,6 +154,25 @@ function createEventList() {
 
 }
   }
+}
+
+function getCourseName(c) {
+  
+  switch (c) {
+    case "1712":
+      return "Business Analysis";
+    case "1510":
+      return "Programming Methods";
+    case "1113":
+      return "Applied Mathematics"
+    case "1536":
+      return "Web Development";
+    case "1000":
+      return "Program Fundamentals";
+    case "1930":
+      return "Projects"
+  }
+
 }
 
 function getCourseColor(eventName, eventItem) {

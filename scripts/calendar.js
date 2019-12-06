@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  updateUsername();
-  updateDate();
+ // updateUsername();
+ // updateDate();
 
 
   
@@ -140,7 +140,7 @@ function createEventList(e) {
     if (dueDateList[i].date == (months[currentMonth] + " " + target.innerHTML)) {
       let title = dueDateList[i].type;
       let course = dueDateList[i].course;
-      let percent = dueDateList[i].percent + "%";
+      let percent = dueDateList[i].percent.toFixed(2)  + "%";
       let time = "8PM";
 
       let eventItem = document.createElement("div");
