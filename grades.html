@@ -38,7 +38,7 @@
 
         .card {
             margin: 1.5vh;
-            height: 1000px;
+            height: 1675px;
             width: 95%;
             margin-top: 50px;
 
@@ -126,54 +126,515 @@
             <div id="comp-1510" class="card">
                 <h3 class="card-header">COMP 1510</h3>
                 <div class="card-body">
-                    <h4 class="card-prof-name">Bruce Link</h4>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                        data-whatever="quiz">Submit Quiz Marks</button>
-                    <br>
-                    <p class="card-text">Quiz 1: <span id="quiz1">test1</span></p>
-                    <p class="card-text">Quiz 2: <span id="quiz2">test2</span></p>
-                    <p class="card-text">Quiz 3: <span id="quiz3">test3</span></p>
-                    <p class="card-text">Average of the quizzes: <span id="averageQuizzes">Average</span></p>
+                    <div id=#comp1510QuizSection>
+                        <h4 class="card-prof-name">Bruce Link</h4>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                            data-whatever="quiz">Input Quiz Marks</button>
+                        <br>
+                        <p class="card-text">Quiz 1: <span id="comp1510Quiz1">n</span>/5</p>
+                        <p class="card-text">Quiz 2: <span id="comp1510Quiz2">n</span>/5</p>
+                        <p class="card-text">Quiz 3: <span id="comp1510Quiz3">n</span>/5</p>
+                        <p class="card-text">Quiz 4: <span id="comp1510Quiz4">n</span>/5</p>
+                        <p class="card-text">Quiz 5: <span id="comp1510Quiz5">n</span>/5</p>
+                        <p class="card-text">Quiz 6: <span id="comp1510Quiz6">n</span>/5</p>
+                        <p class="card-text">Quiz 7: <span id="comp1510Quiz7">n</span>/5</p>
+                        <p class="card-text">Quiz 8: <span id="comp1510Quiz8">n</span>/5</p>
+                        <p class="card-text">Quiz 9: <span id="comp1510Quiz9">n</span>/5</p>
+                        <p class="card-text">Quiz 10: <span id="comp1510Quiz10">n</span>/5</p>
+                        <p class="card-text">Quiz 11: <span id="comp1510Quiz11">n</span>/5</p>
+                        <p class="card-text">Quiz 12: <span id="comp1510Quiz12">n</span>/5</p>
+
+                        <p class="card-text">Average of the quizzes: <span id="comp1510AverageQuizzes">Average</span>
+                        </p>
 
 
 
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">COMP 1510</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label>Quiz Number</label>
-                                            <select size="1" name="experience" id="experience" class="form-control">
-                                                <option value="Quiz 1">Quiz 1</option>
-                                                <option value="Quiz 2">Quiz 2</option>
-                                                <option value="Quiz 3">Quiz 3</option>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">COMP 1510</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Quiz Number</label>
+                                                <select size="1" name="experience" id="experience" class="form-control">
+                                                    <option value="Quiz 1">Quiz 1</option>
+                                                    <option value="Quiz 2">Quiz 2</option>
+                                                    <option value="Quiz 3">Quiz 3</option>
+                                                    <option value="Quiz 4">Quiz 4</option>
+                                                    <option value="Quiz 5">Quiz 5</option>
+                                                    <option value="Quiz 6">Quiz 6</option>
+                                                    <option value="Quiz 7">Quiz 7</option>
+                                                    <option value="Quiz 8">Quiz 8</option>
+                                                    <option value="Quiz 9">Quiz 9</option>
+                                                    <option value="Quiz 10">Quiz 10</option>
+                                                    <option value="Quiz 11">Quiz 11</option>
+                                                    <option value="Quiz 12">Quiz 12</option>
 
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message-text" id="mark" class="col-form-label">Marks</label>
-                                            <textarea class="form-control" id="message-text"></textarea>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="button" id="submit" class="btn btn-primary" data-dismiss="modal">Submit Grade</button>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" id="mark" class="col-form-label">Marks</label>
+                                                <textarea class="form-control" id="message-text"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit" class="btn btn-primary"
+                                            data-dismiss="modal">Submit Grade</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <div id="comp1510LabSection">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1"
+                            data-whatever="lab">Input Lab Marks</button>
+                        <br>
+                        <p class="card-text">Lab 1: <span id="comp1510Lab1">n</span>/5</p>
+                        <p class="card-text">Lab 2: <span id="comp1510Lab2">n</span>/5</p>
+                        <p class="card-text">Lab 3: <span id="comp1510Lab3">n</span>/5</p>
+                        <p class="card-text">Lab 4: <span id="comp1510Lab4">n</span>/5</p>
+                        <p class="card-text">Lab 5: <span id="comp1510Lab5">n</span>/5</p>
+                        <p class="card-text">Lab 6: <span id="comp1510Lab6">n</span>/5</p>
+                        <p class="card-text">Lab 7: <span id="comp1510Lab7">n</span>/5</p>
+                        <p class="card-text">Lab 8: <span id="comp1510Lab8">n</span>/5</p>
+                        <p class="card-text">Lab 9: <span id="comp1510Lab9">n</span>/5</p>
+                        <p class="card-text">Lab 10: <span id="comp1510Lab10">n</span>/5</p>
+                        <p class="card-text">Lab 11: <span id="comp1510Lab11">n</span>/5</p>
+                        <p class="card-text">Lab 12: <span id="comp1510Lab12">n</span>/5</p>
+
+                        <p class="card-text">Average of the Lab Assignment: <span
+                                id="comp1510AverageLabs">Average</span></p>
+
+
+
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel1">COMP 1510</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Lab Assignment Number</label>
+                                                <select size="1" name="experience" id="experience1"
+                                                    class="form-control">
+                                                    <option value="Lab 1">Lab 1</option>
+                                                    <option value="Lab 2">Lab 2</option>
+                                                    <option value="Lab 3">Lab 3</option>
+                                                    <option value="Lab 4">Lab 4</option>
+                                                    <option value="Lab 5">Lab 5</option>
+                                                    <option value="Lab 6">Lab 6</option>
+                                                    <option value="Lab 7">Lab 7</option>
+                                                    <option value="Lab 8">Lab 8</option>
+                                                    <option value="Lab 9">Lab 9</option>
+                                                    <option value="Lab 10">Lab 10</option>
+                                                    <option value="Lab 11">Lab 11</option>
+                                                    <option value="Lab 12">Lab 12</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" id="mark1"
+                                                    class="col-form-label">Marks</label>
+                                                <textarea class="form-control" id="message-text1"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit1" class="btn btn-primary"
+                                            data-dismiss="modal">Submit Grade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="comp1510AssignmentSection">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2"
+                            data-whatever="lab">Input Assignment Marks</button>
+                        <br>
+                        <p class="card-text">Assignment 1: <span id="comp1510Assignment1">n</span>/50</p>
+                        <p class="card-text">Assignment 2: <span id="comp1510Assignment2">n</span>/50</p>
+                        <p class="card-text">Assignment 3: <span id="comp1510Assignment3">n</span>/40</p>
+                        <p class="card-text">Assignment 4: <span id="comp1510Assignment4">n</span>/30</p>
+
+
+                        <p class="card-text">Average of the Lab Assignment: <span
+                                id="comp1510AverageAssignments">Average</span></p>
+
+
+
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel2">COMP 1510</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Lab Assignment Number</label>
+                                                <select size="1" name="experience" id="experience2"
+                                                    class="form-control">
+                                                    <option value="Assignment 1">Assignment 1</option>
+                                                    <option value="Assignment 2">Assignment 2</option>
+                                                    <option value="Assignment 3">Assignment 3</option>
+                                                    <option value="Assignment 4">Assignment 4</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" id="mark2"
+                                                    class="col-form-label">Marks</label>
+                                                <textarea class="form-control" id="message-text2"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit2" class="btn btn-primary"
+                                            data-dismiss="modal">Submit Grade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="comp1510MidtermSection">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal3"
+                            data-whatever="lab">Input Midterm Marks</button>
+                        <br>
+                        <p class="card-text">Midterm: <span id="comp1510Midterm">n</span>/75</p>
+
+                        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel3">COMP 1510</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Midterm</label>
+                                                <select size="1" name="experience" id="experience3"
+                                                    class="form-control">
+                                                    <option value="Midterm">Midterm</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" id="mark3"
+                                                    class="col-form-label">Marks</label>
+                                                <textarea class="form-control" id="message-text3"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit3" class="btn btn-primary"
+                                            data-dismiss="modal">Submit Grade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="comp1510FinalSection">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal4"
+                            data-whatever="lab">Input Final Exam Marks</button>
+                        <br>
+                        <p class="card-text">Finals: <span id="comp1510Final">n</span>/125</p>
+
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel4">COMP 1510</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label>Final</label>
+                                                <select size="1" name="experience" id="experience4"
+                                                    class="form-control">
+                                                    <option value="Midterm">Final</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="message-text" id="mark4"
+                                                    class="col-form-label">Marks</label>
+                                                <textarea class="form-control" id="message-text4"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit4" class="btn btn-primary"
+                                            data-dismiss="modal">Submit Grade</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
+            </div>
+
+            <div class="card-deck">
+                <div id="comp-1712" class="card">
+                    <h3 class="card-header">COMP 1712</h3>
+                    <div class="card-body">
+                        <div id="comp1712LabSection">
+                            <h4 class="card-prof-name">Nandhini Ramachandran</h4>
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal5" data-whatever="lab">Input Lab Marks</button>
+                            <br>
+                            <p class="card-text">Lab 1: <span id="comp1712Lab1">n</span>/10</p>
+                            <p class="card-text">Lab 2: <span id="comp1712Lab2">n</span>/10</p>
+                            <p class="card-text">Lab 3: <span id="comp1712Lab3">n</span>/10</p>
+                            <p class="card-text">Lab 4: <span id="comp1712Lab4">n</span>/10</p>
+                            <p class="card-text">Lab 5: <span id="comp1712Lab5">n</span>/10</p>
+                            <p class="card-text">Lab 6: <span id="comp1712Lab6">n</span>/10</p>
+                            <p class="card-text">Lab 7: <span id="comp1712Lab7">n</span>/10</p>
+                            <p class="card-text">Lab 8: <span id="comp1712Lab8">n</span>/10</p>
+                            <p class="card-text">Lab 9: <span id="comp1712Lab9">n</span>/10</p>
+                            <p class="card-text">Lab 10: <span id="comp1712Lab10">n</span>/10</p>
+                            <p class="card-text">Lab 11: <span id="comp1712Lab11">n</span>/10</p>
+                            <p class="card-text">Lab 12: <span id="comp1712Lab12">n</span>/10</p>
+
+                            <p class="card-text">Average of the Lab Assignment: <span
+                                    id="comp1712AverageLabs">Average</span></p>
+
+
+
+                            <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabe5" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel5">COMP 1712</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Lab Assignment Number</label>
+                                                    <select size="1" name="experience" id="experience5"
+                                                        class="form-control">
+                                                        <option value="Lab 1">Lab 1</option>
+                                                        <option value="Lab 2">Lab 2</option>
+                                                        <option value="Lab 3">Lab 3</option>
+                                                        <option value="Lab 4">Lab 4</option>
+                                                        <option value="Lab 5">Lab 5</option>
+                                                        <option value="Lab 6">Lab 6</option>
+                                                        <option value="Lab 7">Lab 7</option>
+                                                        <option value="Lab 8">Lab 8</option>
+                                                        <option value="Lab 9">Lab 9</option>
+                                                        <option value="Lab 10">Lab 10</option>
+                                                        <option value="Lab 11">Lab 11</option>
+                                                        <option value="Lab 12">Lab 12</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" id="mark5"
+                                                        class="col-form-label">Marks</label>
+                                                    <textarea class="form-control" id="message-text5"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" id="submit5" class="btn btn-primary"
+                                                data-dismiss="modal">Submit Grade</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comp1712AssignmentSection">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal6" data-whatever="lab">Input Group Assignment Marks</button>
+                            <br>
+                            <p class="card-text">Assignment 1: <span id="comp1712Assignment1">n</span>/10</p>
+                            <p class="card-text">Assignment 2: <span id="comp1712Assignment2">n</span>/10</p>
+
+
+                            <p class="card-text">Average of the Group Assignment: <span
+                                    id="comp1712AverageAssignments">Average</span></p>
+
+
+
+                            <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabe6" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel6">COMP 1712</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Group Assignment Number</label>
+                                                    <select size="1" name="experience" id="experience6"
+                                                        class="form-control">
+                                                        <option value="Assignment 1">Assignment 1</option>
+                                                        <option value="Assignment 2">Assignment 2</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" id="mark6"
+                                                        class="col-form-label">Marks</label>
+                                                    <textarea class="form-control" id="message-text6"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" id="submit6" class="btn btn-primary"
+                                                data-dismiss="modal">Submit Grade</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comp1712MidtermSection">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal7" data-whatever="lab">Input Midterm Marks</button>
+                            <br>
+                            <p class="card-text">Midterm: <span id="comp1712Midterm">n</span>/70</p>
+
+                            <div class="modal fade" id="exampleModal7" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel7">COMP 1712</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Midterm</label>
+                                                    <select size="1" name="experience" id="experience7"
+                                                        class="form-control">
+                                                        <option value="Midterm">Midterm</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" id="mark7"
+                                                        class="col-form-label">Marks</label>
+                                                    <textarea class="form-control" id="message-text7"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" id="submit7" class="btn btn-primary"
+                                                data-dismiss="modal">Submit Grade</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comp1712FinalSection">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal8" data-whatever="lab">Input Final Exam Marks</button>
+                            <br>
+                            <p class="card-text">Finals: <span id="comp1712Final">n</span>/50</p>
+
+                            <div class="modal fade" id="exampleModal8" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel8">COMP 1712</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Final</label>
+                                                    <select size="1" name="experience" id="experience8"
+                                                        class="form-control">
+                                                        <option value="Final">Final</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" id="mark8"
+                                                        class="col-form-label">Marks</label>
+                                                    <textarea class="form-control" id="message-text8"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" id="submit8" class="btn btn-primary"
+                                                data-dismiss="modal">Submit Grade</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
             </div>
 
 
@@ -186,19 +647,19 @@
 
     <script>
         //submit button does this stuff: 
-        setAddListener();
-        getAverage("1510", "quizzes");
+        setComp1510QuizAddListener();
+        getComp1510QuizAverage("1510", "quizzes");
 
         //Adds quiz and its grade into the database 
         //DOESNT UPDATE grade / duplicate quizzes
-        function setAddListener() {
+        function setComp1510QuizAddListener() {
             document.getElementById("submit").addEventListener("click", function (e) {
                 //Variables for different types of course and assessments
                 let course = "1510";
                 let type = "quizzes";
                 let quiznum = document.getElementById("experience").value;
                 let grade = document.getElementById("message-text").value;
-                console.log("PRESSED! " + quiznum + " " + grade);
+                console.log("COMP 1510 " + quiznum + " " + grade);
 
                 firebase.auth().onAuthStateChanged(function (user) {
                     console.log(user.uid);
@@ -210,27 +671,34 @@
                         })
                 });
 
+
             });
         }
 
-        showQuizMarks();
 
-        function showQuizMarks() {
+        showComp1510QuizMarks();
+
+        function showComp1510QuizMarks() {
             firebase.auth().onAuthStateChanged(function (user) {
-                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes").orderBy("name")
-                    .get().then(function (snap) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("quizzes")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
                         var counter = 1;
                         snap.forEach(function (doc) {
                             // Getting the data and displaying it through the database
                             var mark = doc.data().mark;
-                            document.getElementById("quiz" + counter).innerHTML = mark;
+                            document.getElementById("comp1510Quiz" + counter).innerHTML = mark;
                             counter++;
                         })
-                    });
+
+                    })
+
+
             })
         }
 
-        function getAverage(course, type) {
+        function getComp1510QuizAverage(course, type) {
             firebase.auth().onAuthStateChanged(function (user) {
                 var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
                     .collection(type);
@@ -250,11 +718,543 @@
                     console.log("sum of marks ", sum);
                     let average = sum / totalQuiz;
                     console.log("AVERAGE ", average);
-                    document.getElementById("averageQuizzes").innerHTML = average;
+                    document.getElementById("comp1510AverageQuizzes").innerHTML = average.toFixed(2) +
+                        "/5";
 
                 });
 
             });
+        }
+
+        //submit button does this stuff: 
+        setComp1510LabAddListener();
+        getComp1510LabAverage("1510", "labs");
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1510LabAddListener() {
+            document.getElementById("submit1").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1510";
+                let type = "labs";
+                let labnum = document.getElementById("experience1").value;
+                let grade = document.getElementById("message-text1").value;
+                console.log("COMP 1510 " + labnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: labnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+        showComp1510LabMarks();
+
+        function showComp1510LabMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("labs")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1510Lab" + counter).innerHTML = mark;
+                            counter++;
+                        })
+
+                    })
+
+
+            })
+        }
+
+        function getComp1510LabAverage(course, type) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
+                    .collection(type);
+                let sum = 0;
+                let totalLab = 0.0;
+                dbRef.onSnapshot(function (snap) {
+                    //Checks each document in the collection(Lab)
+                    snap.forEach(function (doc) {
+                        var mark = Number(doc.data().mark);
+                        console.log(doc.data().name + " ", mark);
+                        sum += mark;
+
+                        totalLab++
+
+                    });
+
+                    console.log("sum of marks ", sum);
+                    let average = sum / totalLab;
+                    console.log("AVERAGE ", average);
+                    document.getElementById("comp1510AverageLabs").innerHTML = average.toFixed(2) +
+                        "/5";
+
+                });
+
+            });
+        }
+
+        //submit button does this stuff: 
+        setComp1510AssignmentAddListener();
+        getComp1510AssignmentAverage("1510", "assignments");
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1510AssignmentAddListener() {
+            document.getElementById("submit2").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1510";
+                let type = "assignments";
+                let assignmentnum = document.getElementById("experience2").value;
+                let grade = document.getElementById("message-text2").value;
+                console.log("COMP 1510 " + assignmentnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: assignmentnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+        showComp1510AssignmentMarks();
+
+        function showComp1510AssignmentMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("assignments")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1510Assignment" + counter).innerHTML =
+                                mark;
+                            counter++;
+                        })
+
+                    })
+
+
+            })
+        }
+
+        function getComp1510AssignmentAverage(course, type) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
+                    .collection(type);
+                let sum = 0;
+                let totalAssignments = 0.0;
+                dbRef.onSnapshot(function (snap) {
+                    //Checks each document in the collection(LABS)
+                    snap.forEach(function (doc) {
+                        var mark = Number(doc.data().mark);
+                        console.log(doc.data().name + " ", mark);
+                        sum += mark;
+
+                        totalAssignments++
+
+                    });
+
+                    console.log("sum of marks ", sum);
+                    let average = sum / totalAssignments;
+                    console.log("AVERAGE ", average);
+                    document.getElementById("comp1510AverageAssignments").innerHTML = average.toFixed(
+                        2) + "/5";
+
+                });
+
+            });
+        }
+
+        //submit button does this stuff: 
+        setComp1510MidtermAddListener();
+        showComp1510MidtermMarks();
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1510MidtermAddListener() {
+            document.getElementById("submit3").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1510";
+                let type = "midterm";
+                let midtermnum = document.getElementById("experience3").value;
+                let grade = document.getElementById("message-text3").value;
+                console.log("COMP 1510 " + midtermnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: midtermnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+
+
+        function showComp1510MidtermMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("midterm")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1510Midterm").innerHTML =
+                                mark;
+
+                        })
+
+                    })
+
+
+            })
+        }
+
+        //submit button does this stuff: 
+        setComp1510FinalAddListener();
+        showComp1510FinalMarks();
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1510FinalAddListener() {
+            document.getElementById("submit4").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1510";
+                let type = "final";
+                let finalnum = document.getElementById("experience4").value;
+                let grade = document.getElementById("message-text4").value;
+                console.log("COMP 1510 " + finalnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: finalnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+
+
+        function showComp1510FinalMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1510").collection("final")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1510Final").innerHTML =
+                                mark;
+
+                        })
+
+                    })
+
+
+            })
+        }
+
+        //submit button does this stuff: 
+        setComp1712LabAddListener();
+        getComp1712LabAverage("1712", "labs");
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1712LabAddListener() {
+            document.getElementById("submit5").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1712";
+                let type = "labs";
+                let labnum = document.getElementById("experience5").value;
+                let grade = document.getElementById("message-text5").value;
+                console.log("COMP 1712 " + labnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: labnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+        showComp1712LabMarks();
+
+        function showComp1712LabMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1712").collection("labs")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1712Lab" + counter).innerHTML = mark;
+                            counter++;
+                        })
+
+                    })
+
+
+            })
+        }
+
+        function getComp1712LabAverage(course, type) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
+                    .collection(type);
+                let sum = 0;
+                let totalLab = 0.0;
+                dbRef.onSnapshot(function (snap) {
+                    //Checks each document in the collection(Lab)
+                    snap.forEach(function (doc) {
+                        var mark = Number(doc.data().mark);
+                        console.log(doc.data().name + " ", mark);
+                        sum += mark;
+
+                        totalLab++
+
+                    });
+
+                    console.log("sum of marks ", sum);
+                    let average = sum / totalLab;
+                    console.log("AVERAGE ", average);
+                    document.getElementById("comp1712AverageLabs").innerHTML = average.toFixed(2) +
+                        "/10";
+
+                });
+
+            });
+        }
+
+        //submit button does this stuff: 
+        setComp1712AssignmentAddListener();
+        getComp1712AssignmentAverage("1712", "assignments");
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1712AssignmentAddListener() {
+            document.getElementById("submit6").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1712";
+                let type = "assignments";
+                let assignmentnum = document.getElementById("experience6").value;
+                let grade = document.getElementById("message-text6").value;
+                console.log("COMP 1712 " + assignmentnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: assignmentnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+        showComp1712AssignmentMarks();
+
+        function showComp1712AssignmentMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1712").collection("assignments")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        var counter = 1;
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1712Assignment" + counter).innerHTML =
+                                mark;
+                            counter++;
+                        })
+
+                    })
+
+
+            })
+        }
+
+        function getComp1712AssignmentAverage(course, type) {
+            firebase.auth().onAuthStateChanged(function (user) {
+                var dbRef = db.collection('users').doc(user.uid).collection("grades").doc(course)
+                    .collection(type);
+                let sum = 0;
+                let totalAssignments = 0.0;
+                dbRef.onSnapshot(function (snap) {
+                    //Checks each document in the collection(Lab)
+                    snap.forEach(function (doc) {
+                        var mark = Number(doc.data().mark);
+                        console.log(doc.data().name + " ", mark);
+                        sum += mark;
+
+                        totalAssignments++
+
+                    });
+
+                    console.log("sum of marks ", sum);
+                    let average = sum / totalAssignments;
+                    console.log("AVERAGE ", average);
+                    document.getElementById("comp1712AverageAssignments").innerHTML = average.toFixed(
+                            2) +
+                        "/10";
+
+                });
+
+            });
+        }
+
+        //submit button does this stuff: 
+        setComp1712MidtermAddListener();
+        showComp1712MidtermMarks();
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1712MidtermAddListener() {
+            document.getElementById("submit7").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1712";
+                let type = "midterm";
+                let midtermnum = document.getElementById("experience7").value;
+                let grade = document.getElementById("message-text7").value;
+                console.log("COMP 1712 " + midtermnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: midtermnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+
+
+        function showComp1712MidtermMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1712").collection("midterm")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1712Midterm").innerHTML =
+                                mark;
+
+                        })
+
+                    })
+
+
+            })
+        }
+
+        //submit button does this stuff: 
+        setComp1712FinalAddListener();
+        showComp1712FinalMarks();
+
+        //Adds quiz and its grade into the database 
+        //DOESNT UPDATE grade / duplicate quizzes
+        function setComp1712FinalAddListener() {
+            document.getElementById("submit8").addEventListener("click", function (e) {
+                //Variables for different types of course and assessments
+                let course = "1712";
+                let type = "final";
+                let finalnum = document.getElementById("experience8").value;
+                let grade = document.getElementById("message-text8").value;
+                console.log("COMP 1712 " + finalnum + " " + grade);
+
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user.uid);
+                    db.collection("users").doc(user.uid).collection("grades").doc(course)
+                        .collection(type)
+                        .add({
+                            name: finalnum,
+                            mark: grade
+                        })
+                });
+
+
+            });
+        }
+
+
+
+
+        function showComp1712FinalMarks() {
+            firebase.auth().onAuthStateChanged(function (user) {
+                db.collection("users").doc(user.uid).collection("grades").doc("1712").collection("final")
+                    .orderBy("name")
+                    .onSnapshot(function (snap) {
+
+                        snap.forEach(function (doc) {
+                            // Getting the data and displaying it through the database
+                            var mark = doc.data().mark;
+                            document.getElementById("comp1712Final").innerHTML =
+                                mark;
+
+                        })
+
+                    })
+
+
+            })
         }
     </script>
 
