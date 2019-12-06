@@ -10,11 +10,19 @@
 
  .card {
    margin: 1.5vh;
-   height: 520px;
+   height: 530px;
    width: 95%;
    margin-top: 50px;
 
  }
+/* 
+ #card1 {
+  margin: 1.5vh;
+  height: 650px;
+  width: 95%;
+  margin-top: 50px;
+
+} */
 
  /* .card-ex {
       margin: 1.5vh;
@@ -50,7 +58,7 @@
  td,
  th {
    border: 1px solid black;
-   font-size: 6pt;
+   font-size: 7.5pt;
    text-align: center;
 
  }
@@ -58,6 +66,10 @@
  .card-body {
 
    text-align: center;
+ }
+
+ .card-header{
+   background-color : #6FC2AA;
  }
 
  #myBtn:hover {
