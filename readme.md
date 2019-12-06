@@ -1,22 +1,39 @@
 ## Calendagenda
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [Contents](#content)
 
 ## General info
-This project is simple Lorem ipsum dolor generator.
+This project was created for BCIT Computer System Technology Fall Term 1 students for 
+Projects 1 course.
 	
 ## Technologies
 Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+* Firebase Hosting
+* Firebase Database
+* HTML, CSS
+* JavaScript
+* Bootstrap 
 	
-## Setup
-To run this project, install it locally using npm:
+## content
+Content of the project folder:
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+├── .firebase                # Folder for firebase
+├── images                   # Folder for images
+├── scripts                  # Folder for scripts
+├── styles                   # Folder for styles
+├── .firebaserc              # Firebase file
+├── .gitignore               # Git file
+├── 404.html                 # File for error
+├── calendar.html            # Calendagenda calendar page
+├── firebase.json            # Firebase file
+├── firestore.indexes.json   # Firebase file
+├── firestore.rules          # Firebase file
+├── grades.html              # Calendagenda grades page
+├── index.html               # Calendagenda landing page
+├── loginpage.html           # Calendagenda loginpage page
+├── main.html                # Calendagenda main page
+├── officehours.html         # Calendagenda course information page
+└── README.md
 ```
