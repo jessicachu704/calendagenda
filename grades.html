@@ -26,10 +26,15 @@
     <script src="scripts/script.js"></script>
     <script src="scripts/firebase_config.js"></script>
 
+    <style>
+        body {
+            background-image: url("images/tealpink.jpg");
+        }
+    </style>
 
 </head>
 
-<body background="images/tealpink.jpg">
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -37,7 +42,8 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#!"><img class="card-image" src="images/logo.jpg" width="50" height="50" /></a>
+        <a class="navbar-brand" href="#!"><img class="card-image" alt="logo" src="images/logo.jpg" width="50"
+                height="50" /></a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
@@ -405,7 +411,7 @@
 
 
                             <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabe5" aria-hidden="true">
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -468,7 +474,7 @@
 
 
                             <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabe6" aria-hidden="true">
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -694,7 +700,7 @@
 
 
                             <div class="modal fade" id="exampleModal10" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabe10" aria-hidden="true">
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -852,8 +858,8 @@
                             <p class="card-text">Quiz 8: <span id="comp1930Quiz8">n</span>/3</p>
                             <p class="card-text">Tech Mini 1: <span id="comp1930Quiz9">n</span>/3</p>
                             <p class="card-text">Tech Mini 2: <span id="comp1930Quiz10">n</span>/3</p>
-                            <p class="card-text">Tech Mini 3: <span id="comp1930Quiz10">n</span>/3</p>
-                            <p class="card-text">Tech Mini 4: <span id="comp1930Quiz10">n</span>/3</p>
+                            <p class="card-text">Tech Mini 3: <span id="comp1930Quiz11">n</span>/3</p>
+                            <p class="card-text">Tech Mini 4: <span id="comp1930Quiz12">n</span>/3</p>
 
 
                             <p class="card-text">Average of the quizzes/tech mini: <span
@@ -932,7 +938,7 @@
                                     id="comp1930AverageIndividualAssignments">Average</span></p>
 
                             <div class="modal fade" id="exampleModal14" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabe14" aria-hidden="true">
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -1150,7 +1156,7 @@
 
 
             <div class="card-deck">
-                <div id="comp 1113" class="card">
+                <div id="comp1113" class="card">
                     <h3 class="card-header">COMP 1113</h3>
                     <div class="card-body">
                         <div id="comp1113QuizSection">
@@ -1452,6 +1458,49 @@
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
                                             <button type="button" id="submit23" class="btn btn-primary"
+                                                data-dismiss="modal">Submit Grade</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="comm1116PresentationSection">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                data-target="#exampleModal26" data-whatever="lab">Input Presentation Marks</button>
+                            <br>
+                            <p class="card-text">Presentation: <span id="comm1116Presentation">n</span>/100</p>
+
+                            <div class="modal fade" id="exampleModal26" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel26">COMM 1116</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <label>Final</label>
+                                                    <select size="1" name="experience" id="experience26"
+                                                        class="form-control">
+                                                        <option value="Final">Presentation</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="message-text" id="mark26"
+                                                        class="col-form-label">Marks</label>
+                                                    <textarea class="form-control" id="message-text26"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" id="submit26" class="btn btn-primary"
                                                 data-dismiss="modal">Submit Grade</button>
                                         </div>
                                     </div>

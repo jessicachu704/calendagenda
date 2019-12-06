@@ -1731,6 +1731,58 @@ function showComm1116FinalMarks() {
     })
 }
 
+//submit button does this stuff: 
+setComm1116PresentationAddListener();
+showComm1116PresentationMarks();
+
+//Adds quiz and its grade into the database 
+//DOESNT UPDATE grade / duplicate quizzes
+function setComm1116PresentationAddListener() {
+    document.getElementById("submit26").addEventListener("click", function (e) {
+        //Variables for different types of course and assessments
+        let course = "1116";
+        let type = "presentation";
+        let presentationnum = document.getElementById("experience26").value;
+        let grade = document.getElementById("message-text26").value;
+        console.log("COMM 1116 " + presentationnum + " " + grade);
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            console.log(user.uid);
+            db.collection("users").doc(user.uid).collection("grades").doc(course)
+                .collection(type)
+                .add({
+                    name: presentationnum,
+                    mark: grade
+                })
+        });
+
+
+    });
+}
+
+
+
+
+function showComm1116PresentationMarks() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        db.collection("users").doc(user.uid).collection("grades").doc("1116").collection("presentation")
+            .orderBy("name")
+            .onSnapshot(function (snap) {
+
+                snap.forEach(function (doc) {
+                    // Getting the data and displaying it through the database
+                    var mark = doc.data().mark;
+                    document.getElementById("comm1116Presentation").innerHTML =
+                        mark;
+
+                })
+
+            })
+
+
+    })
+}
+
  //scrolling anchor button to see more
  $(document).ready(function () {
     $("a").on('click', function (event) {
