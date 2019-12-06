@@ -1,11 +1,23 @@
+
+
+#background {
+  opacity: 0.7;
+  position: absolute;
+  height: 100%;
+  width:100%;
+  z-index: -1;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
 .calendar-container {
-   
+
     padding: 16px;
     margin-bottom: 24px;
     text-align: center;
+
   }
   .calendar-container__header {
     display: flex;
+  
   
   }
 
@@ -48,7 +60,7 @@
     padding-left: 20px;
     padding-top: 10px;
     padding-right: 80px;
-    color: #222741;
+    color: DarkSlateBlue ;
     font-size: 24px;
     font-weight: 700;
   }
@@ -59,7 +71,7 @@
   .calendar-table__item {
     border: 2px solid transparent;
     border-radius: 50%;
-    color: #424588;
+    color: DarkSlateBlue ;
     font-size: 12px;
     font-weight: 700;
     width: 100%;
@@ -121,11 +133,7 @@
 }
 
 
-.calendar-table__today  {
-  border-color: #FEFEFE;
-  background-color: white
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-}
+
 .calendar-table__event {
   background-color: #66DCEC;
   border-color: #FEFEFE;
@@ -175,24 +183,38 @@
     padding: 0 15px;
   }
   .events__title {
-    color: #BEC1CA;
+    color: DarkSlateBlue ;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 16px;
   }
-  .events__tag {
-    background: #66DCEC;
-    border: 2px solid #FEFEFE;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    color: #fff;
-    font-size: 10px;
-    font-weight: 600;
-    width: 60px;
-    margin-left: 16px;
-    padding: 5px 2px;
-    text-align: center;
+  .events__tag1 {
+    color: black;
+    font-size: 13px;  
+    width: 180px;
+    height: 20px;
+    float: right;
+    position: relative;
+    left: 40px;
+
+ 
+  }
+  .events__tag2 {
+    color: black;
+    font-size: 13px;
+    width: 140px;
+    height: 20px;
+    float: right;
+  }
+
+  .events__item--right{
+    border-left: 3px solid  gray;
+    border-radius: 4px;
+    position: relative;
+    width: 160px;
+
+
   }
 
   .events__percent {
@@ -214,7 +236,7 @@
   .events__name {
     font-size: 12px;
     font-weight: 700;
-    color: #222741;
+    color: black;
     display: block;
     margin-bottom: 6px;
   }
@@ -222,4 +244,10 @@
     font-size: 12px;
     color: #9FAAB7;
     display: inline-block;
+  }
+
+  .calendar-table__today  {
+    border-color: #FEFEFE;
+    background-color: #6FC2AA;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   }

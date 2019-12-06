@@ -2,6 +2,7 @@
 $(document).ready(function () {
   updateUsername();
   updateDate();
+
  
 });
 
@@ -33,7 +34,7 @@ todayDate += (i) ;
   currentWeek.push(dateObj);
 
 }
-//console.log(currentWeek );
+
 
 createList("1510", "assignments");
 createList("1510", "midterm");
@@ -52,17 +53,19 @@ createList("1712", "assignments");
 // ---------------------------------------------
 function updateUsername(){
   firebase.auth().onAuthStateChanged(function (user) {
-    console.log(user.uid);
   db.collection("users").doc(user.uid)
   .onSnapshot(function (snap) {
-    console.log("NAME " + snap.data().name);
+
     let username =snap.data().name; 
-    document.getElementById('userName').innerHTML = username .substring(0,username.indexOf(" ")) + "!";
+    if(username.indexOf(' ') <= 0 ){
+      document.getElementById('userName').innerHTML = username + "!";
+    }
+    else{
+    document.getElementById('userName').innerHTML = username.substring(0,username.indexOf(" ")) + "!";
+    }
    });
   });
 };
-
-
 
 // ---------------------------------------------
 // Updates main page to today's date
@@ -73,7 +76,12 @@ function updateDate(){
   document.getElementById('cl_copy').innerHTML = dateToday + " " + currentYear;
 }
 
-//Create list of duedates for selected course and assessment type
+// ---------------------------------------------
+//Create list of duedates for selected course and assessment type.
+// @param course course number of user
+// @type type assessment type of user
+// ---------------------------------------------
+
 function createList(course, type){
     let duedate;
     db.collection("courses").doc(course).collection("assessments").doc(type)
@@ -88,20 +96,38 @@ function createList(course, type){
         if(type == "lab") type = "Lab";
         if(type == "final") type = "Final";
         duedate =  snap.data().duedates[i];
-        dueDateObject = {course: course, name:getCourseName(course), type: type, percent: percent, date: duedate};
+        dueDateObject = {course: course, type: type, percent: percent, date: duedate};
         dueDateList.push(dueDateObject);
         
       }
       createEventList();
-   //   console.log("LIST " + dueDateList);
     });
 }
+// ---------------------------------------------
+//Sorts list of due dates's grade weight in descending order.
+// ---------------------------------------------
+function sortDueDates(){
+  function compare( a, b ) {
+    if(a.percent > b.percent){
+      return -1;
+    }
+    else if(a.percent < b.percent){
+      return 1;
+    }
+    else{
+      0;
+    }
+  }
+  dueDateList.sort(compare);
+}
 
-
+// ---------------------------------------------
+//Function to create task schedule for current week.
+// ---------------------------------------------
 function createEventList() {
+  sortDueDates();
   let event = document.getElementById("event-body");
   event.innerHTML = "";
-
   let clickDate = document.createElement("div");
   clickDate.innerHTML = "Your schedule this week: "; 
   clickDate.classList.add("events__title");
@@ -122,17 +148,18 @@ function createEventList() {
     if(due == weekListItem){
       let title = dueDateList[i].type;
       let course = dueDateList[i].course;
-      let name = dueDateList[i].name;
       let percent = dueDateList[i].percent.toFixed(2) + "%";
     
 
       let eventItem = document.createElement("div");
       eventItem.classList.add("events__item");
+      let eventItemRight = document.createElement("div");
       let eventItemLeft = document.createElement("div");
       eventItemLeft.classList.add("events__item--left");
+      eventItemRight.classList.add("events__item--right");
       let eventName = document.createElement("span");
       eventName.classList.add("events__name");
-      eventName.innerHTML = course + ": " + name;
+      eventName.innerHTML = course ;
 
       getCourseColor(eventName, eventItem);
       let eventPercent = document.createElement("span");
@@ -140,12 +167,13 @@ function createEventList() {
       eventPercent.classList.add("events__percent");
       let eventDate = document.createElement("span");
       eventDate.classList.add("events__tag2");
-      eventDate.innerHTML = "Percentage worth: " + percent;
+      eventDate.innerHTML = "Due: " + dueDateList[i].date;
       let eventTag = document.createElement("span");
       eventTag.classList.add("events__tag1");
-      eventTag.innerHTML = "Date due: " + dueDateList[i].date;
+      eventTag.innerHTML = "Percentage worth: " + percent;"Due: " + dueDateList[i].date;
+      eventItemRight.append(eventTag, eventDate);
       eventItemLeft.append(eventName, eventPercent);
-      eventItem.append(eventItemLeft, eventTag, eventDate);
+      eventItem.append(eventItemLeft, eventItemRight);
       eventList.appendChild(eventItem);
     
     }
@@ -156,25 +184,10 @@ function createEventList() {
   }
 }
 
-function getCourseName(c) {
-  
-  switch (c) {
-    case "1712":
-      return "Business Analysis";
-    case "1510":
-      return "Programming Methods";
-    case "1113":
-      return "Applied Mathematics"
-    case "1536":
-      return "Web Development";
-    case "1000":
-      return "Program Fundamentals";
-    case "1930":
-      return "Projects"
-  }
 
-}
-
+// ---------------------------------------------
+// Changes event task color based on course.
+// ---------------------------------------------
 function getCourseColor(eventName, eventItem) {
   let num = eventName.innerHTML.substring(0, 4);
   switch (num) {
