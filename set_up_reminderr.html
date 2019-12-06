@@ -29,43 +29,11 @@
 
     <script src="scripts/firebase_config.js"></script>
 
-
+    <link rel="stylesheet" href="styles/setupreminder.css">
     <style>
-        body {
-
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url(images/teal_pink_background.jpg);
-        }
-
-        #submit {
-            background-color: #6FC2AA
-        }
-
-        #box {
-            height: 70px;
-        }
-
-        .card {
-
-            width: 300px;
-            height: 500px;
-            text-align: center;
-            background-color: white;
-            box-shadow: 5px 10px 8px #888888;
-            top: 10vh;
-            align-self: center;
-            margin: 0 auto;
-            /* Added */
-            float: none;
-            /* Added */
-            margin-bottom: 375px;
-        }
-
-        h2 {
-            text-align: center;
-        }
+       body {
+      background-image: url(images/tealpink.jpg);
+    }
     </style>
 </head>
 
@@ -77,25 +45,32 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        <a class="navbar-brand" href="#!"><img class="card-image" src="images/logo.jpg"width="50" height="50" /></a>
 
-        <a class="navbar-brand" href="#!"><img class="card-image" src="images/logo.jpg" width="50" height="50" /></a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#!">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Contact Us</a>
-                </li>
-            </ul>
+          <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="calendar.html">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="grades.html">Grades</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="officehours.html">Office Hours</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="courseinfomation.html">Course Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="signOutButton" >Log out</a>
+          </li>
+        </ul>
         </div>
     </nav>
+
 
 
 
@@ -140,5 +115,6 @@
 </body>
 <script src="scripts/setupreminder.js">
 </script>
+ <script src="scripts/signout.js"></script>
 
 </html>

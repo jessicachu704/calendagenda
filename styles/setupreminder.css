@@ -1,0 +1,33 @@
+ body {
+
+            background-size: cover;
+            background-image: url(images/teal_pink_background.jpg);
+        }
+
+        #submit {
+            background-color: #6FC2AA
+        }
+
+        #box {
+            height: 70px;
+        }
+
+        .card {
+
+            width: 300px;
+            height: 500px;
+            text-align: center;
+            background-color: white;
+            box-shadow: 5px 10px 8px #888888;
+            top: 10vh;
+            align-self: center;
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 375px;
+        }
+
+        h2 {
+            text-align: center;
+        }
