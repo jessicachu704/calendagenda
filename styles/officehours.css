@@ -49,8 +49,13 @@
   table, td, th {
     border: 1px solid black;
     font-size: 6pt;
-  }
+    text-align: center;
 
+  }
+.card-body{
+  
+  text-align: center;
+}
   #myBtn:hover {
       background-color: #555;
   }
