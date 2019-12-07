@@ -17,10 +17,10 @@ Technologies that were used for our project:
 * Bootstrap 
 	
 ## Content
-###### Content of the project folder:
+Content of the project folder:
 
 ```
-###### Top level of project folder: 
+ Top level of project folder: 
 ├── 404.html                 # File for error
 ├── calendar.html            # Calendagenda calendar HTML file
 ├── grades.html              # Calendagenda grades HTML file
@@ -30,13 +30,13 @@ Technologies that were used for our project:
 ├── officehours.html         # course information HTML file
 └── README.md
 
-###### It has the following subfolders:
+It has the following subfolders:
 ├── .firebase                # Folder for firebase
 ├── images                   # Folder for images
 ├── scripts                  # Folder for scripts
 ├── styles                   # Folder for styles
 
-###### Firebase hosting files: 
+Firebase hosting files: 
 ├── .firebaserc              # Firebase file
 ├── .gitignore               # Git file
 ├── firebase.json            # Firebase file
