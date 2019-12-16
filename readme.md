@@ -4,8 +4,8 @@
 * [Contents](#content)
 
 ## General info
-This project was created for BCIT Computer System Technology 
-Fall Term 1 students by Group31 for Projects 1 course.
+This project was created in BCIT Computer System Technology 
+Fall Term 1 by Group31 for Projects 1 course.
 
 	
 ## Technologies
