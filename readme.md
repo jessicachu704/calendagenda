@@ -1,4 +1,6 @@
 ## Calendagenda
+A web agenda for students.
+Live demo  [_here_](https://calenderapp-2aa01.firebaseapp.com/).
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
