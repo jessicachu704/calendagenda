@@ -5,7 +5,7 @@
 
 ## General info
 This project was created in BCIT Computer System Technology 
-Fall Term 1 by Group31 for Projects 1 course.
+Fall Term 1 by Group31 for Projects 1 course. </br>
 We found it hard to check the course outline for every course, many steps were needed, so we designed a web app to centralize all course information together including office hours, weight of each assignment/quiz, and the calender of the dates of dues/exams.
 
 	
