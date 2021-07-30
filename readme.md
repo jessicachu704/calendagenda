@@ -1,5 +1,6 @@
 ## Calendagenda
-A web agenda for students.</br>
+This project was created in BCIT Computer System Technology 
+Fall Term 1 by Group31 for Projects 1 course.</br>
 Hosted at  [_https://calenderapp-2aa01.firebaseapp.com/_](https://calenderapp-2aa01.firebaseapp.com/).
 * [General info](#general-info)
 * [Technologies](#technologies)
@@ -7,8 +8,7 @@ Hosted at  [_https://calenderapp-2aa01.firebaseapp.com/_](https://calenderapp-2a
 * [Contents](#content)
 
 ## General info
-This project was created in BCIT Computer System Technology 
-Fall Term 1 by Group31 for Projects 1 course. </br>
+This web app is intended to be an online agenda for students to manage schoolworks.</br>
 We found it hard to check the course outline for every course, many steps were needed, so we designed a web app to centralize all course information together including office hours, weight of each assignment/quiz, and the calender of the dates of dues/exams for students.
 </br>
 Students can also input the marks of each quiz/assignment and its weight to keep track of the course average.
