@@ -2,6 +2,9 @@
 This project was created in BCIT Computer System Technology 
 Fall Term 1 by Group31 for Projects 1 course.</br>
 Hosted at  [_https://calenderapp-2aa01.firebaseapp.com/_](https://calenderapp-2aa01.firebaseapp.com/).
+
+
+## Table of Contents
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Features](#features)
